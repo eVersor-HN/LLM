@@ -1,4 +1,4 @@
-# Published with each release. The value below is the authoritative SHA-256 of the
-# actual uploaded LLM.apk and must match the release notes and the README byte-for-byte.
+# Authoritative SHA-256 of the uploaded release asset. Matches the release notes and the
+# README byte-for-byte.
 
-<pending first public release>  LLM.apk
+a0d31ad91960b801ac9c6d921951cc8bed6e2177d2522650761ab3c419d5ddda  LLM-v0.14.1-arm64.apk
