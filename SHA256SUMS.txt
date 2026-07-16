@@ -1,0 +1,4 @@
+# Published with each release. The value below is the authoritative SHA-256 of the
+# actual uploaded LLM.apk and must match the release notes and the README byte-for-byte.
+
+<pending first public release>  LLM.apk
