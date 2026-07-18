@@ -1,4 +1,4 @@
 # Authoritative SHA-256 of the uploaded release asset. Matches the release notes and the
 # README byte-for-byte.
 
-a0d31ad91960b801ac9c6d921951cc8bed6e2177d2522650761ab3c419d5ddda  LLM-v0.14.1-arm64.apk
+0cdec66422bffc4b7c01f421aa1035948830da9f8b316b63a728eebfb38bab0e  LLM-v0.14.2-arm64.apk

@@ -4,9 +4,11 @@
 
 > Everything happens locally. Your conversations, characters and files stay on your phone. There is no sign-up, no server, no tracking, and nothing to lose access to.
 
-> 💸 It runs offline so nobody can bill you — which is also the reason nobody bills me. You can fix that:
-> **PayPal:** paypal.me/FAMarco
-> **Bitcoin:** `bc1qv92c3eyeqvhgfnez7spfd7v2aytkhpshsl65yv`
+> 💸 It runs offline so nobody can bill you — which is exactly why nobody bills me. Tip if it earned it:
+>
+> **PayPal** — paypal.me/FAMarco
+>
+> **Bitcoin** — `bc1qv92c3eyeqvhgfnez7spfd7v2aytkhpshsl65yv`
 
 ---
 
@@ -29,18 +31,20 @@ No internet connection is required to use it. Airplane mode works perfectly.
 2. Allow installation from your browser or file manager if Android asks.
 3. Open the app, add a model file, and start chatting.
 
+> **Updating from an older version:** this release is signed with a new signing key, so if you already have an earlier version installed you'll need to uninstall it once before installing this one. Every update after this installs on top without uninstalling.
+
 ## Verify what you downloaded
 
 Every release lists the exact fingerprint of its installer so you can confirm the file is genuine and untampered before installing.
 
 ```
-SHA-256:  a0d31ad91960b801ac9c6d921951cc8bed6e2177d2522650761ab3c419d5ddda
+SHA-256:  0cdec66422bffc4b7c01f421aa1035948830da9f8b316b63a728eebfb38bab0e
 ```
 
 On Windows PowerShell:
 
 ```powershell
-Get-FileHash .\LLM-v0.14.1-arm64.apk -Algorithm SHA256
+Get-FileHash .\LLM-v0.14.2-arm64.apk -Algorithm SHA256
 ```
 
 The value you get must match the one in the release notes exactly. If it does not, do not install the file.
@@ -56,8 +60,11 @@ Import character cards and start a dedicated chat with a single tap — the char
 ### Long answers, uninterrupted
 When a reply is long, the app keeps it going on its own instead of stopping halfway — you get the whole answer without prompting for more.
 
+### Fast on modern phones
+On newer devices the app uses on-device acceleration to answer faster, and picks the right setting for each model automatically — no tuning required.
+
 ### Made to read comfortably
-A clean, modern interface with light and dark modes, adjustable text and spacing, high-contrast and reduced-motion options, and a range of accent colours to make it yours.
+A clean, modern interface with light and dark modes, adjustable text and spacing, high-contrast and reduced-motion options, and a range of accent colours to make it yours. Answers render properly — including tables — and a built-in Help section explains the options in plain language.
 
 ### Your own local API
 Turn your phone into a private AI endpoint on your home network, so your other apps and devices can use your on-device assistant — still without touching the cloud.
