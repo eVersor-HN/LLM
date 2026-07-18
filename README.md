@@ -31,20 +31,20 @@ No internet connection is required to use it. Airplane mode works perfectly.
 2. Allow installation from your browser or file manager if Android asks.
 3. Open the app, add a model file, and start chatting.
 
-> **Updating from an older version:** this release is signed with a new signing key, so if you already have an earlier version installed you'll need to uninstall it once before installing this one. Every update after this installs on top without uninstalling.
+> **Updating:** if you already have v0.14.2 or newer, this installs straight on top and keeps your chats. Coming from anything older than v0.14.2, uninstall once first — the signing key changed in that release.
 
 ## Verify what you downloaded
 
 Every release lists the exact fingerprint of its installer so you can confirm the file is genuine and untampered before installing.
 
 ```
-SHA-256:  0cdec66422bffc4b7c01f421aa1035948830da9f8b316b63a728eebfb38bab0e
+SHA-256:  7aa522632ec1cc6487ea2b114ee7885e3504c0c17870c36cf58f075df19eb009
 ```
 
 On Windows PowerShell:
 
 ```powershell
-Get-FileHash .\LLM-v0.14.2-arm64.apk -Algorithm SHA256
+Get-FileHash .\LLM-v0.14.3-arm64.apk -Algorithm SHA256
 ```
 
 The value you get must match the one in the release notes exactly. If it does not, do not install the file.
@@ -55,7 +55,7 @@ The value you get must match the one in the release notes exactly. If it does no
 Natural, flowing chat with your own model, with saved history that stays on your device. Pick up any conversation where you left off.
 
 ### Characters and roleplay
-Import character cards and start a dedicated chat with a single tap — the character greets you and stays in role. A set of ready-made behaviour presets lets you shape the assistant from strictly safe to completely unrestricted, and you can write your own.
+Six characters are built in and ready the moment you open the app — an engineer, an analyst, a teacher, a writer, a philosopher and one deeply sarcastic machine. Tap any of them to start a chat where they greet you and stay in role. Import your own character cards alongside them, kept in their own section so they never get lost among the built-ins. A set of ready-made behaviour presets lets you shape the assistant from strictly safe to completely unrestricted, and you can write your own.
 
 ### Long answers, uninterrupted
 When a reply is long, the app keeps it going on its own instead of stopping halfway — you get the whole answer without prompting for more.
