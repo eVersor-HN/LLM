@@ -27,7 +27,7 @@ No internet connection is required to use it. Airplane mode works perfectly.
 
 ## Get it
 
-1. Download the latest release from the [Releases](../../releases) page.
+1. Download the latest release from the [Releases](../../releases) page — see the [changelog](CHANGELOG.md) for what changed.
 2. Allow installation from your browser or file manager if Android asks.
 3. Open the app, add a model file, and start chatting.
 
@@ -38,13 +38,13 @@ No internet connection is required to use it. Airplane mode works perfectly.
 Every release lists the exact fingerprint of its installer so you can confirm the file is genuine and untampered before installing.
 
 ```
-SHA-256:  7aa522632ec1cc6487ea2b114ee7885e3504c0c17870c36cf58f075df19eb009
+SHA-256:  d04976df6e95fac7986310a1001c9a2023aa7e2278dbbfc4f713a96dcee03fbe
 ```
 
 On Windows PowerShell:
 
 ```powershell
-Get-FileHash .\LLM-v0.14.3-arm64.apk -Algorithm SHA256
+Get-FileHash .\LLM-v0.14.4-arm64.apk -Algorithm SHA256
 ```
 
 The value you get must match the one in the release notes exactly. If it does not, do not install the file.
