@@ -48,13 +48,13 @@ If you never enable either, the app never opens a socket.
 Every release lists the exact fingerprint of its installer so you can confirm the file is genuine and untampered before installing.
 
 ```
-SHA-256:  52327efe9af137932a69fd3e04707dca318fd506519b8a055bc14f5469920124
+SHA-256:  9870e459cb18a45fc178ca2597f2939d3118b36b09832a299605f5b5a8824f30
 ```
 
 On Windows PowerShell:
 
 ```powershell
-Get-FileHash .\LLM-v0.15.0-arm64.apk -Algorithm SHA256
+Get-FileHash .\LLM-v0.17.1-public-arm64.apk -Algorithm SHA256
 ```
 
 The value you get must match the one in the release notes exactly. If it does not, do not install the file.
