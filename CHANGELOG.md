@@ -3,6 +3,36 @@
 All notable changes to LLM, newest first. Each version's installer and its SHA-256 fingerprint are on
 the [Releases](../../releases) page.
 
+## v0.17.1 — 2026-07-19
+
+A maintenance release: faster large models, several crashes fixed, and instructions that now reach
+the model instead of being quietly relocated.
+
+### Changed
+
+- **Large models are faster.** The hand-tuned ARM routines that speed up quantised models were only
+  enabled below a fixed 4 GB model size, so the largest models never got them. The decision is now
+  based on how much memory the phone actually has free.
+- **Reply length and reply language now reach the model.** Both are placed at the end of the
+  conversation, immediately before the answer, where instructions are followed most reliably. Several
+  model families — Gemma and Mistral among them — moved them back to the very front, behind the whole
+  chat history. They now stay in place.
+- **The Unrestricted preset is much shorter** and phrased as what to do rather than a list of
+  prohibitions, which small local models tend to follow more literally in the wrong direction.
+- **Behaviour presets can be chosen when a chat starts**, alongside the reply length. The separate
+  Prompt button was removed from the menu; the full editor remains in Settings → Input freedom.
+- **Adventures keep the behaviour preset** you selected instead of replacing it, and the reply-language
+  setting now applies in adventures as well.
+
+### Fixed
+
+- The app could close while importing a large model file.
+- Deleting a chat while a reply was still being written could close the app.
+- Long replies could suddenly change typeface and size mid-answer, snapping back at the end.
+- A short, quick swipe often failed to open the menu.
+- The README's download-verification section quoted an older release's fingerprint and filename, so
+  checking a genuine download reported a mismatch.
+
 ## v0.17.0 — 2026-07-19
 
 The first public release of the current line. Earlier builds are no longer distributed.
