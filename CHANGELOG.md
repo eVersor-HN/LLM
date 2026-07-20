@@ -3,6 +3,42 @@
 All notable changes to LLM, newest first. Each version's installer and its SHA-256 fingerprint are on
 the [Releases](../../releases) page.
 
+## v0.18.0 — 2026-07-20
+
+A dedicated Code tab that turns the app into a private coding workspace, syntax highlighting
+everywhere, and a fix that stops large models being reclaimed in the background.
+
+### Added
+
+- **A Code tab.** A second top-level tab, next to Chat, with its own session list and an unrestricted,
+  "finish the whole thing" coding style that keeps writing across replies until the answer is complete.
+- **Projects.** Group code sessions under projects and link each project to a folder on your phone.
+- **Project folder browser.** Browse a project's linked folder and load a file into your message; the
+  model can read and write the project's files itself through its file tools.
+- **Files.** The code the model produces is collected as named files — copy, save out, or keep as a
+  snippet.
+- **Snippets.** Save reusable code and drop it into any session with one tap.
+- **Code quick-starts.** Ready-made starting points for building small tools you can use on the phone
+  (a self-contained web page, a terminal script), for security work, and for fixing/understanding code.
+- **Syntax highlighting** for code blocks in both chat and code — keywords, strings, numbers, function
+  calls and shell commands each coloured.
+- **Your name.** Tell the app your name and the model addresses you by it, fills `{{user}}` in
+  characters, and labels your own messages.
+
+### Changed
+
+- **Fullscreen with real tabs.** The app runs edge to edge with the status bar hidden and a fixed
+  Chat | Code bar at the very top; open the menu with a swipe from the middle of the screen.
+- **Three behaviour presets** (Unrestricted, Restricted, Natural) with Unrestricted as the default; the
+  two role-play presets were dropped, since a character card already carries its own role.
+
+### Fixed
+
+- **Large models are no longer killed in the background.** With a model loaded, the app holds itself in
+  the foreground the way a terminal session does, so the phone's memory manager stops reclaiming it
+  when you switch away — without keeping the CPU awake while idle.
+- Character cards no longer print their own name twice in the opening greeting.
+
 ## v0.17.1 — 2026-07-19
 
 A maintenance release: faster large models, several crashes fixed, and instructions that now reach
