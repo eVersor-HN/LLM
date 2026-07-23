@@ -54,7 +54,7 @@ SHA-256:  e9739f316bfbc75e8239a202ede60f633600e3905a8883e6541662c5b93ac524
 On Windows PowerShell:
 
 ```powershell
-Get-FileHash .\LLM-v0.18.0-public-arm64.apk -Algorithm SHA256
+Get-FileHash .\LLM-v0.21.0-public-arm64.apk -Algorithm SHA256
 ```
 
 The value you get must match the one in the release notes exactly. If it does not, do not install the file.

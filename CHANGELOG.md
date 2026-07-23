@@ -3,6 +3,27 @@
 All notable changes to LLM, newest first. Each version's installer and its SHA-256 fingerprint are on
 the [Releases](../../releases) page.
 
+## v0.21.0 — 2026-07-23
+
+Run a model larger than your phone's RAM: a Mixture-of-Experts model can stream its experts from
+storage as it writes. Plus Adventure mode and dictation since the last public build.
+
+### Added
+
+- **Models larger than RAM.** For a Mixture-of-Experts model (e.g. Qwen3-30B-A3B), the shared weights
+  stay in memory while each word's experts are read from storage on demand — so a 25–30 GB model runs
+  on a phone that can't hold it all. Engages automatically, and only when a model won't otherwise fit;
+  smaller models load exactly as before.
+- **Adventure mode.** A third tab: a text-adventure game master with a shake-to-roll d20, thrown-dice
+  animation, a character sheet that fills in as you play, and a story chronicle in the drawer.
+- **Dictation.** Speak your message from the composer instead of typing.
+
+### Fixed
+
+- Large MoE models no longer get killed by the system while loading: streaming keeps a capped memory
+  budget, overlaps storage reads with compute, and the loader no longer pulls the whole file into
+  memory at once.
+
 ## v0.18.0 — 2026-07-20
 
 A dedicated Code tab that turns the app into a private coding workspace, syntax highlighting
