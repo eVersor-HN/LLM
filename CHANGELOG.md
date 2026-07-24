@@ -3,6 +3,15 @@
 All notable changes to LLM, newest first. Each version's installer and its SHA-256 fingerprint are on
 the [Releases](../../releases) page.
 
+## v0.22.1 — 2026-07-24
+
+### Fixed
+
+- **Crash on first start with a very large streaming model.** On some phones with aggressive memory
+  management, loading a model much larger than RAM (and starting a new RPG) could get the app killed by
+  the system during loading. The app now uses a more conservative memory budget — especially on the
+  very first load — so it stays alive. Verified on a 24 GB phone with a ~24 GB model.
+
 ## v0.22.0 — 2026-07-24
 
 Smarter memory handling for models larger than your RAM, a cleaner message bar, and fixes for how the
