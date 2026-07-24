@@ -3,6 +3,32 @@
 All notable changes to LLM, newest first. Each version's installer and its SHA-256 fingerprint are on
 the [Releases](../../releases) page.
 
+## v0.22.0 — 2026-07-24
+
+Smarter memory handling for models larger than your RAM, a cleaner message bar, and fixes for how the
+Chat / Code / RPG tabs behave.
+
+### Added
+
+- **Smarter streaming memory.** For a model that streams its experts from storage, the app now learns
+  the right amount of memory to cache per device and per model, and backs off automatically when it
+  detects the phone is being pushed too hard — including under memory pressure or when the phone gets
+  hot — so big models stay stable instead of getting killed. You can also turn on "Force MoE expert
+  streaming" (Settings → Device & performance) to stream a model even when it would fit, for a smaller
+  memory footprint. A small status line shows when a model is streaming and how it's tuned.
+- **Cleaner message bar.** The attach, dictate, and web-search buttons now live in one "+" menu, so the
+  text field is much wider. New hand-drawn icons replace the old emoji symbols.
+
+### Changed
+
+- The **Adventure tab is now called RPG**.
+
+### Fixed
+
+- A reply is no longer visible in more than one tab at once — the live text now stays in the tab where
+  you started it.
+- Typing a first message on the Code tab now starts a proper code session instead of an ordinary chat.
+
 ## v0.21.0 — 2026-07-23
 
 Run a model larger than your phone's RAM: a Mixture-of-Experts model can stream its experts from
