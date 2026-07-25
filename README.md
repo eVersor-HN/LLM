@@ -48,13 +48,13 @@ If you never enable either, the app never opens a socket.
 Every release lists the exact fingerprint of its installer so you can confirm the file is genuine and untampered before installing.
 
 ```
-SHA-256:  159626f3bb1d0fd63682f1d4590929c957578830e1fc5ee41c0fad8259751d6b
+SHA-256:  8e4a44067272a0ec0b47deabc363dc2784aded607f6e942cdf18befd4c3ff85b
 ```
 
 On Windows PowerShell:
 
 ```powershell
-Get-FileHash .\LLM-v0.22.1-public-arm64.apk -Algorithm SHA256
+Get-FileHash .\LLM-v0.23.0-public-arm64.apk -Algorithm SHA256
 ```
 
 The value you get must match the one in the release notes exactly. If it does not, do not install the file.
@@ -73,8 +73,8 @@ Several of them are not conversations but *procedures* — a typing engine that 
 
 Tap any card to start a chat where it greets you and stays in role. Import your own cards alongside them, kept in their own section so they never get lost among the built-ins. A set of ready-made behaviour presets lets you shape the assistant from strictly safe to completely unrestricted, and you can write your own.
 
-### A workspace for code
-A dedicated **Code** tab, next to Chat, built for programming rather than a chat with a coding prompt attached. The model answers in an unrestricted, get-it-done style and keeps writing across replies until the whole thing is finished. Organise your work into **projects**, link each project to a folder on your phone, browse that folder and load a file into your message, and let the model read and write the project's files itself. Everything the model produces is collected under **Files** to copy, save out, or keep as a reusable **snippet**, and code is coloured with proper **syntax highlighting** throughout. Ready-made quick-starts help you build a small tool you can actually use on the phone, work through a security task, or fix and understand existing code.
+### Text adventures (RPG)
+A built-in **RPG** mode turns the model into your game master. Pick a genre — or let it surprise you — and play a text adventure with a live character sheet: health, attributes, inventory and status, all kept up to date as the story unfolds. Risky choices are decided by a physical dice roll on screen, so outcomes feel earned rather than handed to you. Keep **world notes** for the places, people and secrets that matter, and the game master stays consistent with them as you go. The whole thing reads like a novel and runs entirely on your phone.
 
 ### Long answers, uninterrupted
 When a reply is long, the app keeps it going on its own instead of stopping halfway — you get the whole answer without prompting for more.

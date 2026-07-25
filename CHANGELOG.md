@@ -3,6 +3,37 @@
 All notable changes to LLM, newest first. Each version's installer and its SHA-256 fingerprint are on
 the [Releases](../../releases) page.
 
+## v0.23.0 — 2026-07-25
+
+Focused on Chat and RPG: a more immersive text-adventure mode, a lighter app, and smoother, more
+stable generation.
+
+### Added
+
+- **World notes for RPG.** Keep the places, people and secrets of your adventure as notes; the game
+  master is reminded of each one exactly when it matters, so a large world stays consistent without
+  slowing the game down.
+
+### Changed
+
+- **The app is now Chat + RPG.** The Code tab has been removed to keep the app focused and clean; your
+  existing chats are unaffected.
+- **Nicer RPG reading.** Story text now reads like a book, with roomier line spacing and paragraph
+  rhythm.
+- **Smoother streaming.** A reply now streams without making the rest of the screen do unnecessary
+  work, so scrolling and typing stay responsive while the model writes.
+- **Leaner and safer.** Removed the experimental tools that let the model run shell commands and touch
+  files, so the app no longer requests those permissions. Web search, the calculator and the local API
+  server stay.
+- Updated the in-app Help with guidance on running very large (20–30 GB) models and how much memory
+  they actually need.
+
+### Fixed
+
+- RPG choice buttons no longer show stray tags like "[STR]".
+- Better stability on phones that could kill a very large model while it was loading.
+- A lighter dice animation, and an extra safety check when reading a character-card file.
+
 ## v0.22.1 — 2026-07-24
 
 ### Fixed
