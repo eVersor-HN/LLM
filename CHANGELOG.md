@@ -3,6 +3,33 @@
 All notable changes to LLM, newest first. Each version's installer and its SHA-256 fingerprint are on
 the [Releases](../../releases) page.
 
+## v0.24.0 — 2026-07-26
+
+A polish release across the whole app: smoother streaming, a calmer RPG, and Settings you can
+actually find your way around.
+
+### Changed
+
+- **Settings reorganized.** Reply behaviour (length, language, emojis, auto-continue, auto-scroll)
+  now lives in one "Chat & replies" card; the reading font is under Appearance; screenshot blocking
+  under Privacy; and Accessibility is genuinely about accessibility again, including read-aloud.
+  Every setting on the page now applies immediately — no more scrolling down to "Save" for half of
+  them.
+- **Calmer RPG.** While the story writes you see a quiet pulse instead of a progress readout, and
+  chat controls (continue prompts, reply variants, edit menus) no longer appear over the fiction.
+  All icons in the adventure setup are now the app's own monochrome style.
+- **Reduce Motion now covers the adventure too:** choices appear instantly and the dice verdict is
+  shown without the throw and slam. The dice result is also announced to screen readers.
+- **Smoother, lighter streaming.** Long replies stream with noticeably less overhead, switching
+  between long chats is snappier, and the app starts a little faster.
+
+### Fixed
+
+- Story text no longer changes its spacing the moment a turn finishes writing.
+- World notes are properly removed when their adventure is deleted, and travel with backups.
+- The battery-optimisation status in Settings updates right after you grant the exemption.
+- Several small battery and stability fixes around tool approval and low-memory situations.
+
 ## v0.23.0 — 2026-07-25
 
 Focused on Chat and RPG: a more immersive text-adventure mode, a lighter app, and smoother, more
