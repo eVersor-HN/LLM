@@ -3,6 +3,19 @@
 All notable changes to LLM, newest first. Each version's installer and its SHA-256 fingerprint are on
 the [Releases](../../releases) page.
 
+## v0.24.1 — 2026-07-26
+
+A small RPG quality-of-life patch on top of v0.24.0.
+
+### Changed
+
+- **The character sheet explains itself.** Tap any value on the RPG sheet — the eight attributes,
+  every derived value (defence, attacks, initiative, the passive senses, carry capacity) and the
+  saving throws — and a small popup tells you in plain language what it is and when the story uses
+  it. A quiet hint on the sheet points the way.
+- **Sheet rows regrouped** so each line reads as one idea: body & senses, mind & presence, the
+  fight, and what you notice and can carry.
+
 ## v0.24.0 — 2026-07-26
 
 A polish release across the whole app: smoother streaming, a calmer RPG, and Settings you can
