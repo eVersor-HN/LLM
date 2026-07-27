@@ -3,6 +3,36 @@
 All notable changes to LLM, newest first. Each version's installer and its SHA-256 fingerprint are on
 the [Releases](../../releases) page.
 
+## v0.26.0 — 2026-07-27
+
+A reliability and safety release: more models load, your data is better protected, and you can keep
+notes on your models.
+
+### Added
+
+- **Notes on your models.** Every model in the list can carry a short note — what it is good at, what
+  it is not — so you stop guessing which file was which. The app fills in a first suggestion from the
+  name; edit it or replace it and it becomes yours. Collapsed it stays a single quiet line so a long
+  note never floods the list; tap to read the whole thing.
+
+### Changed
+
+- **More models just work.** Newer model families that previously would not start now load and chat
+  correctly, and large models that used to quit partway through loading come up cleanly.
+- **Reopening a conversation is near-instant** even for a big model.
+- **Formulas display properly** — inline math in a reply now renders instead of showing raw markup.
+
+### Fixed
+
+- **Your local chat text is now protected on your device** — drafts, saved conversation settings and
+  story journals are no longer kept in the clear.
+- **Backups always restore.** A backup can no longer be produced that the app then refuses to load,
+  and older backups still restore exactly as before.
+- **Nothing gets lost quietly.** A conversation you configured, a draft you were typing, or a model's
+  answer you interrupted are all kept where they used to occasionally vanish.
+- **Malformed model cards are handled safely** instead of freezing or crashing the app, and a story
+  can no longer be knocked into a state where it will not reopen.
+
 ## v0.24.1 — 2026-07-26
 
 A small RPG quality-of-life patch on top of v0.24.0.
