@@ -64,7 +64,7 @@ The value you get must match the one in the release notes exactly. If it does no
 ### Private conversations
 Natural, flowing chat with your own model, with saved history that stays on your device. Pick up any conversation where you left off.
 
-### Characters and roleplay
+### Built-in characters
 Twenty-one characters are built in and ready the moment you open the app, in two collections.
 
 **General** holds a senior engineer who answers with the fix rather than a lecture, a stage magician who will actually tell you how the trick is done, a diagnostician who troubleshoots anything broken, a curator who interviews you before recommending a thing, an emergency planner, a wilderness guide, and a night watchman who talks to the museum exhibits. **Cyberpunk** is the near-future set: privacy and threat modelling, forcing companies to delete your data, street medicine, salvage and repair, biohacking, conditioning, hardware builds, light-up clothing, invention, and security.
