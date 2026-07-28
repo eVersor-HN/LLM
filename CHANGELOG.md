@@ -3,6 +3,24 @@
 All notable changes to LLM, newest first. Each version's installer and its SHA-256 fingerprint are on
 the [Releases](../../releases) page.
 
+## v0.27.1 — 2026-07-28
+
+Groundwork for making follow-up replies faster.
+
+### Changed
+
+- **Less wasted work on follow-up questions.** When a conversation continues exactly where it left
+  off, the app no longer discards the work it had already done on that conversation. Some model
+  families benefit from this more than others, and long conversations do not benefit yet — see below.
+
+### Known
+
+- **Follow-up replies in a long conversation still take as long as the first one.** The app currently
+  re-reads the whole conversation for every reply instead of only the new part. The cause is now
+  identified and this release contains the first half of the fix; the rest changes how instructions
+  are placed in the prompt and is being done carefully rather than quickly, because it can affect
+  reply quality.
+
 ## v0.27.0 — 2026-07-28
 
 The app now notices when your phone is struggling and eases off, and Settings stops throwing away
