@@ -3,6 +3,43 @@
 All notable changes to LLM, newest first. Each version's installer and its SHA-256 fingerprint are on
 the [Releases](../../releases) page.
 
+## v0.27.0 — 2026-07-28
+
+The app now notices when your phone is struggling and eases off, and Settings stops throwing away
+work you have not saved.
+
+### Added
+
+- **It backs off when the phone gets hot.** When your device heats up or switches to battery saver,
+  the app quietly narrows how hard it works instead of pushing on until Android throttles it. Long
+  replies stop being extended automatically while that lasts, so a hot phone gets a shorter answer
+  rather than a slower one and a flat battery.
+- **A Stop button on the notification.** You can end a reply from the notification shade without
+  opening the app, and it saves what was written so far, exactly like the Stop button in the chat.
+- **Settings asks before discarding your changes.** Leaving the Settings page with unsaved edits now
+  offers to save them. This covers all three places on that page that have their own Save button.
+- **You can check who signed your copy.** Settings → About shows the signing fingerprint of the
+  installed app. Compare it with the release notes: a different value means the build did not come
+  from the developer. Useful after installing, where the file hash can no longer help you.
+
+### Changed
+
+- **Tapping the notification no longer restarts the app.** It used to close and reopen the app,
+  which threw away the reply it was announcing.
+- **The RPG drawer reads in the story's font.** The character sheet, chronicle and choices now follow
+  the reading font you picked, and the Chat | RPG tabs no longer change size with the story text
+  slider.
+- **Clearer attribution.** The licence screen now describes the optional NPU files and the toolchain
+  they were built with.
+
+### Fixed
+
+- **The app no longer closes itself in rare cases.** A refusal by Android to keep the app running in
+  the background is now reported instead of ending the process, and unusual model or card files can
+  no longer take the app down while being read.
+- **Backups round-trip more safely.** A protected value that could not be read on export is no longer
+  made permanently unreadable by importing it again.
+
 ## v0.26.0 — 2026-07-27
 
 A reliability and safety release: more models load, your data is better protected, and you can keep
