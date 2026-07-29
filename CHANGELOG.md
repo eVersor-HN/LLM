@@ -3,6 +3,41 @@
 All notable changes to LLM, newest first. Each version's installer and its SHA-256 fingerprint are on
 the [Releases](../../releases) page.
 
+## v0.29.0 — 2026-07-29
+
+Photos and documents, and replies that reach the answer.
+
+### Added
+
+- **Show the model a photo.** Tap “+” → Attach a photo, write your question and send. With a vision
+  model loaded it describes what is in the picture, reads the text on a printed page, translates a
+  sign, or explains a diagram — and the photo stays visible in the chat above your message. Any
+  format your phone can open works, HEIC and WEBP included; pictures are scaled down before the model
+  sees them, so a 12-megapixel photo does not turn into minutes of waiting.
+- **A vision model sets itself up.** Import the language GGUF and its mmproj file and the app pairs
+  them by name when the model loads — nothing to configure. A projector on its own is labelled
+  “vision add-on · loads with its model” and no longer pretends to be a model you can talk to.
+- **Attach a PDF, Word, Excel, PowerPoint, OpenDocument, RTF or EPUB file and the text comes out.**
+  On your device, with no library and nothing sent anywhere. Tap “Insert text” and it lands in your
+  message where you can read it, shorten it and ask your question around it — nothing goes to the
+  model behind your back. Spreadsheets keep their rows and columns; presentations are labelled by
+  slide.
+- Files that genuinely cannot be read say so instead of returning noise: a scanned PDF (photograph
+  the page and use a vision model instead), a PDF whose text is locked inside custom font tables, and
+  the pre-2007 binary .doc/.xls/.ppt formats.
+
+### Fixed
+
+- **Replies that stopped after the model's thinking.** On models that separate reasoning from answer,
+  generation ended silently at exactly that seam — so the reply you got was the model's private
+  notes, and the answer never arrived.
+- **Reasoning is folded away again** into “▸ Reasoning” instead of being glued onto the front of the
+  answer.
+- **The attached picture never reached the model.** It does now. The question was answered about a
+  photo the model had never been shown.
+- The attachment bar no longer says “nothing is inserted automatically” over a photo — a photo is
+  sent with your message, which is the whole point of attaching one.
+
 ## v0.28.0 — 2026-07-29
 
 Very large models load again, adventures are played by writing instead of picking, and the app tells
