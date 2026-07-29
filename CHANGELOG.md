@@ -3,6 +3,61 @@
 All notable changes to LLM, newest first. Each version's installer and its SHA-256 fingerprint are on
 the [Releases](../../releases) page.
 
+## v0.28.0 — 2026-07-29
+
+Very large models load again, adventures are played by writing instead of picking, and the app tells
+you what each model needs before you tap it.
+
+### Added
+
+- **Play an adventure by writing what you do.** The RPG tab no longer offers a short list of options
+  to pick from. You type your action in your own words, in the same box you chat in — talk to someone,
+  search a room, lie, run, climb out of a window. When what you try could fail, the game master rolls
+  the die and it falls across the screen; shake the phone while it is in the air and it keeps
+  tumbling until you stop.
+- **Realism, per character card.** A switch on each card in the drawer. On, the character is played
+  as a person with their own mood and reasons, who can hesitate, ask their own questions or need to
+  be won over — instead of agreeing with everything immediately. It changes how a scene feels, not
+  what is allowed, and it applies from the next message so you can turn it on mid-chat.
+- **See your memory, and get some back.** The drawer shows how much of your phone's memory is free,
+  live. When a model is loaded there is a "Free" button that unloads it and hands the memory back —
+  and it reports what was actually freed rather than promising anything.
+- **Every model says what it needs.** Each model in the list shows the free memory required to load
+  it, and turns red when your phone cannot currently satisfy it. Large Mixture-of-Experts models show
+  their real (much smaller) requirement instead of their file size.
+- **"Skip cold experts" for large models** (Settings → Device and performance). Roughly two thirds
+  fewer reads from storage and a clear speed-up on big models, at the price of slightly different
+  wording and answers that are no longer word-for-word reproducible. Off by default.
+
+### Fixed
+
+- **Large Mixture-of-Experts models refused to load.** A model of 20 GB or more could be turned away
+  with "Model too large for this device" even on a phone with plenty of memory free — the very case
+  the app was built to handle. Three separate causes, all corrected; such a model loads and answers
+  again.
+- **Big models got slower the longer you owned them.** The app tunes itself to your phone, and it
+  could mistake being closed in the background for running out of memory — then quietly give itself
+  less to work with, again and again, with no way back. It now tells the two apart, and refuses to
+  settle on a setting that is measurably too small.
+- **The die was thrown again when it should not have been** — on reopening a story, and after
+  scrolling up and back down.
+- **A single oversized chat, model entry or reply could make the app unusable.** It now keeps working
+  and says what happened, instead of leaving you with no way to reach the item and delete it.
+- Opening the drawer no longer stutters while it reads your memory.
+
+### Changed
+
+- **Tablets, foldables and large screens.** Text keeps a readable width and stays centred instead of
+  stretching across the whole screen, so the app looks the way it does on a phone, with margins.
+- **Adventure setup**: the six setting tiles are now identical in size with centred labels.
+- **Character sheet**: the sixteen attribute tiles are folded away behind one heading, with the
+  values you check most still visible on it.
+- Help has been brought up to date and covers memory requirements, realism and the new RPG.
+
+### Security
+
+- Diagnostic logging no longer contains anything that could be turned back into what you typed.
+
 ## v0.27.1 — 2026-07-28
 
 Groundwork for making follow-up replies faster.

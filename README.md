@@ -48,13 +48,13 @@ If you never enable either, the app never opens a socket.
 Every release lists the exact fingerprint of its installer so you can confirm the file is genuine and untampered before installing.
 
 ```
-SHA-256:  3ec8b01a8d17fd94e8ca3c04ab578fcc1a6dfbd4ca02dbc98180824b4fffdb9e
+SHA-256:  cf2b7eb0309c76fb129ea2375bc5e28262f3c6520fb3b0ecc88fd8794b7df1d8
 ```
 
 On Windows PowerShell:
 
 ```powershell
-Get-FileHash .\LLM-v0.27.1-public-arm64.apk -Algorithm SHA256
+Get-FileHash .\LLM-v0.28.0-public-arm64.apk -Algorithm SHA256
 ```
 
 The value you get must match the one in the release notes exactly. If it does not, do not install the file.
@@ -74,7 +74,13 @@ Several of them are not conversations but *procedures* — a typing engine that 
 Tap any card to start a chat where it greets you and stays in role. Import your own cards alongside them, kept in their own section so they never get lost among the built-ins. A set of ready-made behaviour presets lets you shape the assistant from strictly safe to completely unrestricted, and you can write your own.
 
 ### Text adventures (RPG)
-A built-in **RPG** mode turns the model into your game master. Pick a genre — or let it surprise you — and play a text adventure with a live character sheet: health, attributes, inventory and status, all kept up to date as the story unfolds. Risky choices are decided by a physical dice roll on screen, so outcomes feel earned rather than handed to you. Keep **world notes** for the places, people and secrets that matter, and the game master stays consistent with them as you go. The whole thing reads like a novel and runs entirely on your phone.
+A built-in **RPG** mode turns the model into your game master. Pick a setting — or let it surprise you — and play a text adventure with a live character sheet: health, attributes, inventory and status, all kept up to date as the story unfolds. There is no list of options to choose from: you write what you do, in your own words, and the story answers. When what you try could fail, a physical die falls across the screen and decides it — shake the phone while it is in the air and it keeps tumbling until you let it drop. Keep **world notes** for the places, people and secrets that matter, and the game master stays consistent with them as you go. The whole thing reads like a novel and runs entirely on your phone.
+
+### Models far larger than your memory
+Some of the strongest models available are far bigger than any phone's memory — and this app runs them anyway, reading the parts it needs from storage as it goes. A 24 GB model on a phone that has nowhere near 24 GB free is an ordinary Tuesday here.
+
+### Nothing loads by surprise
+Every model tells you how much free memory it needs before you tap it, and the drawer shows how much your phone actually has, live. If something is loaded and you need the memory back, one button hands it over.
 
 ### Long answers, uninterrupted
 When a reply is long, the app keeps it going on its own instead of stopping halfway — you get the whole answer without prompting for more.
