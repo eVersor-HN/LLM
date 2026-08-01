@@ -3,6 +3,47 @@
 All notable changes to LLM, newest first. Each version's installer and its SHA-256 fingerprint are on
 the [Releases](../../releases) page.
 
+## v0.30.0 — 2026-08-01
+
+The model looks things up, and replies stop re-reading the whole conversation.
+
+### Added
+
+- **Web search that actually searches.** Turn on “Web search” in the + menu and the model searches
+  before it answers instead of relying on a memory that stops at its training date. Until now it
+  ignored the ability entirely — asked who the economics minister is, it named the previous one, and
+  nothing about the answer looked wrong.
+- **“Research” does the whole lookup in one step**: several searches at once, the most promising
+  results opened in parallel, split into passages, ranked against your question, and handed to the
+  model as a short numbered set of sources.
+- **Answers cite what they read.** Sources are numbered and the reply points at them — “…elected with
+  325 votes [4]”, where [4] is the page that says so.
+- **A lookup appears as a card**, not a wall of text: the tool that ran, a one-line summary and the
+  sources, with the passages folded away behind an arrow. Tap a source to copy its address. A failed
+  lookup is marked in red and says why.
+- **A crawler that follows the trail on purpose.** Give it a starting page and something to look for
+  and it visits the most relevant links first, with three breadths — a few pages, one site, or off
+  across the web on mains power.
+- **Help explains self-hosted search**: what SearXNG is, how to run one, and the two settings that
+  decide whether it works with the app.
+
+### Changed
+
+- **Replies get faster the longer you talk.** Each turn no longer rebuilds the model's context from
+  scratch. On a four-turn chat, 914 of 1002 tokens were reused and 88 processed instead of 1002; a
+  two-turn exchange went from 23 to 12 seconds, and the saving grows with the conversation.
+
+### Fixed
+
+- A tool request written by the model **was thrown away** unless the reply contained nothing else, so
+  a model that wrote one polite sentence first was ignored.
+- A **self-hosted search server could not be reached at all**, because Android refuses plain HTTP.
+- A **vision add-on was attached to models it cannot belong to**, and the failure only flashed by in
+  the status line. It now refuses a pairing the files disprove and explains it.
+- A **research result could be too large to answer** — a perfect set of sources arrived and the reply
+  never came. It is now sized against the space actually left.
+- The Adventure tab's opening screen had **no way to start an adventure**.
+
 ## v0.29.0 — 2026-07-29
 
 Photos and documents, and replies that reach the answer.
