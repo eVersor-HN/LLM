@@ -3,6 +3,23 @@
 All notable changes to LLM, newest first. Each version's installer and its SHA-256 fingerprint are on
 the [Releases](../../releases) page.
 
+## v0.30.1 — 2026-08-01
+
+A correction to 0.30.0. If you use a vision model, please update.
+
+### Fixed
+
+- **A vision model was refused and then permanently marked as text-only.** 0.30.0 compared the
+  model's embedding size with the projector's and rejected the pair when they differed — two numbers
+  that were never comparable, because a projector's file describes its own vision tower. Since the
+  capability is recorded after a load, the model then stayed labelled text-only for good. This
+  version repairs the label on the next start; nothing needs re-importing.
+- **A model says it can see before it has ever been loaded.** The “Vision” marker used to appear only
+  after the first successful load, so a freshly imported model and projector looked text-only. The
+  library is read directly instead, in both directions, and the marker is corrected in both
+  directions too.
+- The About screen credits **eVersor-HN**.
+
 ## v0.30.0 — 2026-08-01
 
 The model looks things up, and replies stop re-reading the whole conversation.
