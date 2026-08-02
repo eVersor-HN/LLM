@@ -3,6 +3,33 @@
 All notable changes to LLM, newest first. Each version's installer and its SHA-256 fingerprint are on
 the [Releases](../../releases) page.
 
+## v0.30.2 — 2026-08-02
+
+### Added
+
+- **The model list says that a model does not have to fit in your memory.** A Mixture-of-Experts
+  model reads only the part it needs for the word it is writing, straight from storage, so one
+  several times larger than your free memory still runs. Until now the only trace of that was a
+  “streams experts · needs ~8.1 GB free” under a 30 GB file, which reads like a typo. A short note
+  above the model list explains it, expands for the detail, and can be dismissed for good.
+
+### Fixed
+
+- **Dialogs ignored the text size you set.** Every screen followed the accessibility text slider
+  except the dialogs — where the short, important sentences live. They grow with the rest now.
+- **Long labels were cut in half instead of wrapping** at large text sizes: the drawer buttons, the
+  free-memory line and the donation row.
+- **A lookup searched the wrong year.** The model cannot know today's date, so a question about
+  something current was searched as though it were still the year it was trained in. The date is
+  part of what it is told now, and “hello” no longer sends anyone to the web.
+- **The vision add-on warning interrupted every model load**, including for models that have nothing
+  to do with images. It is raised when a photo is actually refused, and clears itself when a pairing
+  later succeeds.
+- **A scanned PDF said “no readable text was found”** instead of suggesting a photo of the page,
+  which a vision model can read. Its pages are pictures, and pictures were not being counted.
+- **Every RTF attachment began with its own font list** — the font table, colour table and
+  stylesheet a word processor writes before the first sentence were handed to the model as text.
+
 ## v0.30.1 — 2026-08-01
 
 A correction to 0.30.0. If you use a vision model, please update.
