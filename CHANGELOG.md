@@ -3,6 +3,31 @@
 All notable changes to LLM, newest first. Each version's installer and its SHA-256 fingerprint are on
 the [Releases](../../releases) page.
 
+## v0.31.0 — 2026-08-02
+
+### Web search works on a phone that was just installed
+
+- **Search no longer needs anything set up first.** Every public SearXNG server the app used has
+  stopped answering: three rate-limit anything that is not a person, two reply with a “verifying you
+  are human” page, one is gone. A fresh install could therefore not search at all, and the only
+  remedy on offer was to type in the address of a server you host yourself. Search now runs through
+  the browser engine Android already has — no configuration, no account, no API key.
+- **When a page asks whether you are a person, it asks you.** The check appears in the app, on the
+  page that wants it. The app does not solve it for you; the answer is remembered for a while.
+- **What it costs, plainly.** The search page loads in full, with its scripts and cookies, as it
+  would in your normal browser. Third-party cookies are refused and images are not downloaded, but
+  the search engine sees your query. The model still runs entirely on your device.
+- **Your own SearXNG is still better** — plain data instead of a web page, no checks, nothing
+  leaving hardware you own — and is now a choice rather than the price of entry.
+
+### Fixed
+
+- **“Web search” switched on everything except the crawler.** The toggle forced on search, page fetch
+  and research but left the crawler at a global setting that is off by default, so the one tool that
+  can follow a trail was silently missing.
+- **A local address now says why it cannot work.** `http://127.0.0.1:8888` reaches a computer on your
+  desk only while the phone is plugged into it.
+
 ## v0.30.2 — 2026-08-02
 
 ### Added
