@@ -1,5 +1,85 @@
 # Changelog
 
+## 0.32.0 — 2026-08-03
+
+### Vision models find their projector
+
+- **A vision model now pairs with its projector even when the file names are all you have.** Pairing
+  compared only the names stored *inside* the two GGUFs — and a converter is free to leave that as
+  the base model's, or blank. The Qwen3-VL projector ships as a bare `mmproj-F16.gguf`, which scored
+  zero against the very model it was exported for. The file names, which publishers do keep in step,
+  are now compared too.
+- **A projector is no longer guessed onto the wrong model.** With one projector in the library the
+  app used to attach it to whatever was loading, on the reasoning that there was nothing else it
+  could belong to. With gemma + its projector + a second vision model, that handed the *gemma*
+  projector to the second model — the one projector present that demonstrably belonged elsewhere.
+- **The parameter count now settles it.** Everything a publisher ships carries their handle and the
+  family in front: `Huihui-Qwen3-30B-A3B-…` and `mmproj-Huihui-Qwen3-VL-8B-…` share twenty-two
+  characters without being related at all, which was enough to label a text-only 30B model "Vision".
+  A size that both names state and that disagrees — `30b` against `8b` — now rules the pair out, and
+  no amount of shared prefix outvotes it.
+- **A vision model whose projector you never imported says so.** Its card was identical to a
+  text-only model's, so the missing half was invisible: the file is there, it chats, and the only
+  symptom is a *Vision* label that never appears. The card now says which file to look for.
+- **Deleting re-derives the labels.** Removing a projector left its model still labelled *Vision* —
+  a claim with nothing behind it — until the next import or restart.
+
+### Models bigger than your memory
+
+- **Qwen3-VL MoE models stream their experts again.** The streaming engine had no recipe for
+  `qwen3vlmoe`, so a 30 GB vision MoE quietly fell back to ordinary memory-mapped loading and
+  thrashed: 83 seconds to read a single image. It now streams like every other Qwen3 MoE.
+- **The app no longer promises streaming it cannot deliver.** Two places decided whether a model
+  streams, and they disagreed: one asked whether the architecture name contains "moe", the other
+  asked the engine's recipe list. A model that passed the first and failed the second was admitted
+  against a memory estimate of the *streaming* working set and then loaded whole. Both now ask the
+  engine.
+- **Help opens with what this app is for.** How a 30 GB model runs on a phone with 8 GB free, which
+  model families can do it, and how to recognise one before you download it — first section, before
+  everything else.
+- **The library says what a streamed model costs.** "streams experts · needs ~8.1 GB free" is a
+  promise and an apparent contradiction; underneath it now says, in plain words, that file size is
+  not the limit and that you should expect seconds per word.
+
+### Fixed
+
+- **A model could lock itself out of its own chat.** The memory check credited back the model being
+  replaced — but only a *different* one. Re-selecting the model that was already loaded credited
+  nothing, so a 23 GB MoE was measured against memory that this very model was occupying: "needs
+  about 8.2 GiB and only 7.3 GiB is safely available", with the 7.2 GiB it was itself holding
+  invisible to the sum. The bigger the model, the more certain it was to happen.
+- **A refused load no longer claims nothing is loaded.** The check runs before anything is unloaded,
+  so whatever was resident still was — but the app reported otherwise, and the memory readout and
+  the Free button both went along with it.
+- **"I can only see `<media>`."** The marker that tells the projector where an image goes is plain
+  text in the prompt. A model that echoes it leaves one behind for good, and every later turn then
+  sent a marker with no image — so the model correctly reported seeing a placeholder and nothing
+  else. Markers are now stripped from replayed history and re-added only for images actually
+  attached.
+- **Roughly 200 MB written to storage after every reply.** The conversation cache was saved whenever
+  a chat had more than one message, but the file's size follows the whole cache allocation rather
+  than how much of it is used — one saved reply cost 182 MB to preserve a single token. The rule now
+  counts what is actually cached.
+- **Web search worked out of the box everywhere except in the setting that decides it.** The default
+  is documented as the built-in browser, and the browser is the only path that can show a
+  "confirm you are a person" page — but the settings loader handed out SearXNG to anyone who never
+  opened Settings → Tools. Searches went to public servers that now answer with a rate limit, and no
+  check could ever appear.
+
+### Plainer words
+
+- Memory warnings dropped the vocabulary of the implementation. "Safe-load check blocked this
+  configuration: estimated peak 8.1 GB, safe budget 7.3 GB" said what the machinery did; it now says
+  what is too big, by how much, and which of your options changes it.
+- "Resident" is gone from the two places you could read it. It meant "in memory", so it now says so.
+
+### Removed
+
+- Five leftovers from features that were deliberately taken out and whose code stayed behind: the
+  prompt-mode switch, the active-card indicator, a drawer row for two sections that no longer exist,
+  the CPU/GPU badge, and the adventure re-roll that went when free-text play arrived. Eighty-nine
+  lines, none of them reachable.
+
 All notable changes to LLM, newest first. Each version's installer and its SHA-256 fingerprint are on
 the [Releases](../../releases) page.
 
