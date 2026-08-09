@@ -1,5 +1,80 @@
 # Changelog
 
+## 0.33.0 — 2026-08-09
+
+### Models
+
+- **Download a model straight from a link.** Drawer → GGUF → *From a link*, paste the address of the
+  `.gguf` file, and it lands directly in the app. Until now a model arrived in two moves — fetch it
+  in a browser, then import it — and the import copies, so a 23 GB model needed 46 GB of free space
+  and a long wait after an already long wait. A download that stops keeps what it has; paste the same
+  link again and it continues from there.
+- **Or keep the file where it is and never copy it at all.** Picking a GGUF now asks: *Import a copy*
+  puts it in the app's own storage as before, *Use where it is* only remembers permission to read it.
+  A 23 GB model then costs 23 GB instead of 46 and appears in the library at once. The file has to
+  stay put — moved, renamed or deleted, the model says exactly that — and deleting such a model from
+  the library never touches your file.
+- **A model's own file name is remembered.** Projector pairing and the expert-cache autotuner are
+  decided on it, and a linked model has no path to read it from.
+
+### Dictation
+
+- **Dictation now runs on the device where the device can do it.** Android 12 and newer offer a
+  speech recogniser that transcribes without a network; the app asks for that one first. The entry in
+  the "+" menu says which one you got — *on this device*, or *uses a speech service* — because in an
+  app that otherwise sends nothing anywhere, that is not a detail to leave unsaid.
+
+### While a reply is being written
+
+- **The percentage meant two different things and ran backwards.** It showed how much of the prompt
+  had been read, and then, from the first token, how much of the length limit the reply had used —
+  so it climbed to 99 % and dropped to 2 % in front of you, twice per turn with auto-continue. It now
+  measures one thing, the prompt, and only while that is happening: *"reading the conversation · 42 %"*.
+- **A token counter takes its place while the model writes.** It only ever goes up, which is the
+  honest version of "something is happening" — the length limit is a cap, not a target. It matters
+  most when nothing is rendering: a reasoning model can produce tokens for a minute behind a hidden
+  thinking block.
+
+### Adventures
+
+- **An adventure no longer re-reads its whole story every round.** The turns you play were fed to the
+  model and then thrown away, so the next round's history no longer contained them and the cached
+  context diverged at your previous move — every round re-read everything after it, including the
+  last game-master reply. Those turns are kept now (still invisible in the story), and the per-round
+  material is frozen onto the turn it belongs to instead of being recomputed.
+
+### Memory
+
+- **The app now notices memory pressure while you are looking at it.** Android stopped delivering the
+  "running low" signals to apps in its current versions, so the expert cache only ever shrank once the
+  app had been sent to the background — never during the long reply that caused the pressure. It is
+  measured directly now, against the device's own kill threshold, and said out loud when it happens.
+
+### Fixes
+
+- **A backup restore no longer wipes settings it never carried.** The SearXNG address and the two
+  network switches were reset on restore although they are deliberately not exported, so restoring
+  your own backup silently removed a self-hosted search endpoint. They are left alone now — and a
+  backup still cannot switch network access on.
+- **Long menus open next to the button they belong to.** A seven-language list at a large text size
+  was flipped a screen away, over unrelated settings.
+- **Two dialogs stopped cutting their own explanation off** at the right edge.
+- **The composer's buttons grow with the text size.** At the largest sizes they sat small and low
+  beside a field twice their height.
+- **A very small model is no longer mistaken for a vision add-on.** The rule that recognises a
+  projector by shape had no lower bound, so any tiny GGUF without a chat template was captioned
+  "loads with its model" — a claim about a file that does not exist.
+
+### Under the hood
+
+- Dictation, clipboard and lifecycle now use the current APIs; the build has no deprecation warnings
+  left.
+- The prompt-tail rule that decides whether the cached context can be reused at all is a plain,
+  tested function now, with the measured failure it came from kept as a test.
+- The app declares itself as a game to the system, which is how phone vendors gate their CPU and
+  thermal boost paths — measured elsewhere as the difference between a middling clock and the
+  hardware maximum.
+
 ## 0.32.0 — 2026-08-03
 
 ### Vision models find their projector
