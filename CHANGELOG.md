@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.33.1 — 2026-08-09
+
+- **A model card no longer claims a model streams its experts when it does not.** A Mixture-of-Experts
+  model that comfortably fits in memory is loaded resident, because that is faster — streaming is what
+  happens to one that does not fit. The library asked only whether the ARCHITECTURE could stream, so a
+  7 GB Gemma 4 was described as "streams experts · needs ~13.6 GB free" while the engine loaded it
+  resident and used about 9 GB. The card described a different model from the one running, and the
+  safe-load check was sized against the wrong number with it.
+
+  Fixed where such bugs have to be fixed: the condition now lives in one place beside the loader's own
+  decision (`llmc_moe_will_stream`) and both sides call it, rather than two places agreeing until they
+  drift. This is the third bug of exactly this shape — the model-name test versus the recipe registry,
+  the projector paired by guesswork, and now "could stream" versus "will stream".
+
 ## 0.33.0 — 2026-08-09
 
 ### Models
