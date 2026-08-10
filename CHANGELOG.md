@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.34.1 — 2026-08-10
+
+- **The model list folds up.** Each model shows its name and only what decides whether you would open
+  it: whether it is running, whether it can do something another cannot, whether it will fit, how big
+  it is. Tap it and everything appears — the rest of the labels, what it is good at, and a button to
+  actually use it. Five models with all their detail on screen at once was a wall, and a wall is not
+  read.
+- **Tapping a model no longer loads it.** It used to, which meant brushing a 23 GB model in a list
+  started reading it from storage. Loading is now something you ask for.
+- **The model's own notes-to-self stopped appearing in its replies.** A model that thinks before it
+  answers can stop and restart that thinking; only the first block was being removed, so the second
+  reached the chat — reasoning, self-corrections and a stray marker in the middle of the answer.
+- **A greeting no longer triggers a web search.** With web search on, "hi" was producing a request to
+  research "Who am I?" — harmless, because it asks first, but a permission prompt on every greeting
+  teaches you to wave it through.
+
 ## 0.34.0 — 2026-08-10
 
 ### Every model says what it is
