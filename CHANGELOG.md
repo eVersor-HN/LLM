@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.34.0 — 2026-08-10
+
+### Every model says what it is
+
+- **Model cards carry labels now.** A GGUF file tells you almost nothing about itself, and the card in
+  the library is the only place the app can. Each one shows what the model *is* — its weight format,
+  its size, whether it can see pictures, whether it is a Mixture-of-Experts model that runs from
+  storage although it is larger than your memory, whether it is linked rather than copied — and, for
+  the one model that is loaded, what it is *doing*: the processor it is actually running on.
+- **Four weights, and the weight carries the meaning.** A filled label is the running model. An
+  outlined accent label is an ability another model may not have. A quiet outlined label is a plain
+  property. A warning label means it will not load as things stand, and says what is needed. Colour is
+  never the only signal — every label says its meaning in words, because the app has a colour-vision
+  setting.
+- **The guessed processor label is gone.** Every card used to carry "CPU" or "GPU" in the shape of a
+  fact, while guessing at a plan that had not been made yet. Only the loaded model is labelled now,
+  and that label comes from the engine.
+- **A loaded model no longer mislabels itself.** Once loaded, a 6.9 GB model was announcing "runs from
+  storage" — the library was measuring it against the free memory that the model itself was occupying.
+
+### Fixed
+
+- **The frozen prompt tail survives a backup.** Restored adventures kept their invisible turns but
+  lost the record of what the model had actually been told on each one.
+
 ## 0.33.2 — 2026-08-10
 
 ### A model card now describes the model that is running
