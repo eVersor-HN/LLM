@@ -1,5 +1,52 @@
 # Changelog
 
+## 0.33.2 — 2026-08-10
+
+### A model card now describes the model that is running
+
+- **The acceleration badge stopped guessing.** It decided "⚡ CPU + KleidiAI · Q4_0 fast path" from
+  the quantisation and a 4 GiB size limit — a rule the engine removed long ago as wrong in both
+  directions. Those fast ARM kernels come from a weight conversion the engine performs only when
+  there is memory for it (twice the model plus 2 GiB), and every k-quant benefits, not only Q4_0. A
+  small Q4_0 on a busy phone was promised a fast path it never got; a 6.9 GB Q4_K_M running on
+  exactly those kernels was labelled "large". The engine now reports what it did and the badge
+  repeats it.
+- **A model on the NPU is no longer badged "CPU".**
+- **"The NPU is used automatically" was not true** and no longer claims to be. Automatic always
+  resolves to a CPU profile; the NPU has to be chosen. Both places that said otherwise now say what
+  to pick and why you might not want to — it processes long prompts far faster and writes more
+  slowly.
+- **A Mixture-of-Experts model is no longer refused against a number the engine never uses.** The
+  estimate treated the 6 GB cache ceiling as a requirement; the engine sizes that cache to the phone
+  it finds. On a device with modest free memory that refused models which would have run.
+- **The memory figure in the model list is the one the load will use.** It was computed for a
+  different profile, with twice the context, so it quoted hundreds of megabytes too much.
+- **The performance line and the diagnostics report say what runs, not what was requested** — token
+  generation is capped at four threads, the batch is clamped to the context, and memory-mapping is
+  switched off whenever the weight conversion happens.
+- **The memory watchdog can now be seen to have run.** Release builds strip every log call this app
+  makes, so the one mechanism watching for a rare, hard-to-reproduce condition had no way to show it
+  had ever measured anything. Its readings and how often it had to act now appear in the diagnostics
+  report.
+
+### Fixed
+
+- **A linked model was pinned to the CPU forever.** The benchmark that chooses between CPU and GPU
+  was handed the model's location instead of its contents, failed both runs, and cached the failure
+  as a decision.
+- **Downloads could not resume**, despite saying so: each attempt started a new one, and the
+  abandoned part became invisible to the app and to you. An interrupted download of the same file is
+  picked up now, and a dropped connection continues from where it stopped instead of discarding
+  everything.
+- **A download can no longer be silently corrupted** by a server that answers a resume request with
+  the whole file.
+- **Expert streaming is no longer announced for a model that will not stream** — it was decided
+  against memory the model being replaced still occupied, and the "force streaming" switch was
+  invisible to the check that could refuse the model it was turned on for.
+- **The drawer is readable at the largest text sizes.** The header buttons were being broken
+  mid-word ("GGU / F") and the three counters ran into one another.
+- **An adventure's opening turn is recorded the way it was sent.**
+
 ## 0.33.1 — 2026-08-09
 
 - **A model card no longer claims a model streams its experts when it does not.** A Mixture-of-Experts
