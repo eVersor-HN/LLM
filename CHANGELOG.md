@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.34.2 — 2026-08-10
+
+- **Opening the model list does less work.** The processor label removed in 0.34.0 left its machinery
+  behind: every time the library refreshed, the app planned a load for each model and looked up a
+  saved benchmark result to decide between "CPU" and "GPU" — for an answer nothing displayed any
+  more. Nothing changes on screen; there is simply less happening behind it.
+- **Thermal throttling verified on the device.** No behaviour change: under severe heat a long reply
+  still stops at its length limit rather than continuing itself, and that is now confirmed rather
+  than assumed.
+
 ## 0.34.1 — 2026-08-10
 
 - **The model list folds up.** Each model shows its name and only what decides whether you would open
