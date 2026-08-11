@@ -1,5 +1,24 @@
 # Changelog
 
+## 0.35.0 — 2026-08-11
+
+- **Models larger than your free memory now run.** A model file bigger than the memory the phone has
+  spare used to be refused outright. Such a model does not need to be held in memory all at once — it
+  is read from storage as it is used — so it now loads, and its card says plainly what that costs:
+  "slow · reads from storage", and expect many seconds per word. A 15.6 GB model that was turned away
+  on a phone with 16 GB free now opens. It is honest about being slow rather than pretending
+  otherwise.
+- **A RAM button in the top bar.** It unloads whatever model is resident and then asks Android to take
+  memory back from other apps, and it tells you how much it actually got rather than how much it
+  hoped for. Background apps may be closed to pay for it — nothing is deleted, they simply start
+  fresh next time — so it always asks first.
+- **And that button now actually frees memory.** Its first version was too careful with the phone to
+  ever apply real pressure: it backed off within a third of a second, and measured against itself it
+  gained nothing. It now keeps asking for as long as the phone can answer, and stops at the point
+  where there is genuinely nothing left rather than at the first sign of effort. On a 24 GB phone with
+  fifteen apps in the background it takes back around half a gigabyte where it previously took back
+  none — plus whatever the unloaded model was holding, which on a 12B model is another 9 GB.
+
 ## 0.34.2 — 2026-08-10
 
 - **Opening the model list does less work.** The processor label removed in 0.34.0 left its machinery
