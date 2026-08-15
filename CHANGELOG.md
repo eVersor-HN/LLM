@@ -20,8 +20,9 @@
   thin rule fills as the work is done.
 - **A vision model and its add-on file are no longer identical rows.** The add-on is drawn as what it
   is: indented under its model, and dimmed.
-- **Photos in a chat no longer stutter the list.** They were decoded as they scrolled into view, on
-  the thread that draws the screen, and were not really being cached. Both fixed.
+- **Photos in a chat no longer stutter the list.** They were prepared at the moment they scrolled
+  into view, which held the scroll up, and were not kept afterwards — so scrolling back past the same
+  photo paid the cost again. Both fixed.
 - **Chats in Chinese, Japanese and Korean stop breaking early.** The estimate of how much context a
   conversation uses was written for European text and undercounted these scripts about threefold, so
   such a chat hit a hard limit and produced no answer at a third of the usable length.

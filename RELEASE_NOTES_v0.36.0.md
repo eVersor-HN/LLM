@@ -48,9 +48,9 @@ by whoever published them, and at list width the two titles came out the same, s
 about to load was not on the screen. The add-on is now drawn as what it is: indented under, and
 dimmed.
 
-**Photos in a chat no longer stutter the list.** They were being decoded at the moment they scrolled
-into view, on the same thread that draws the screen, and a note claiming they were cached had not
-been true. They are decoded out of the way now, and genuinely kept.
+**Photos in a chat no longer stutter the list.** They were being prepared at the very moment they
+scrolled into view, which held the scroll up for as long as that took, and they were not kept
+afterwards either — so scrolling back past the same photo paid the cost again. Both fixed.
 
 **Chats in Chinese, Japanese and Korean stop breaking early.** The app estimates how much of the
 model's context a conversation is using, and that estimate was written for European text — it
