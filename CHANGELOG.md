@@ -1,5 +1,36 @@
 # Changelog
 
+## 0.36.0 — 2026-08-15
+
+- **A chat with web search on is dramatically faster.** Before answering in such a chat the app asks
+  the model a short question of its own — does this need looking up? — and asking it was throwing the
+  conversation away, so every answer was preceded by re-reading the whole chat from the beginning.
+  On a long conversation that was around forty-five seconds, to ask one yes-or-no question. The work
+  redone before each answer fell by roughly seven eighths on the test conversation.
+- **Model cards describe the file in front of you.** A vision model's note claimed the app was
+  text-only, which stopped being true in v0.29.0. An eighteen-megabyte file called "llama" was
+  presented like any other model with the description of the family whose name it borrowed; a file
+  far too small to be what its name says is now called what it is. A model that is currently running
+  no longer warns that it needs more memory than you have free.
+- **The web-search switch says what it does.** While it is on, every message in that chat is looked
+  up before it is answered — that is deliberate, and now it is stated, along with the fact that it
+  stays on until you turn it off.
+- **Starting an adventure shows progress.** The longest wait in the app offered one unchanging line
+  on an empty screen. Still no numbers and no machinery, but the line moves through the wait and a
+  thin rule fills as the work is done.
+- **A vision model and its add-on file are no longer identical rows.** The add-on is drawn as what it
+  is: indented under its model, and dimmed.
+- **Photos in a chat no longer stutter the list.** They were decoded as they scrolled into view, on
+  the thread that draws the screen, and were not really being cached. Both fixed.
+- **Chats in Chinese, Japanese and Korean stop breaking early.** The estimate of how much context a
+  conversation uses was written for European text and undercounted these scripts about threefold, so
+  such a chat hit a hard limit and produced no answer at a third of the usable length.
+- **The RAM button also hands back the browser engine** that a single web search leaves behind.
+- **A gap in the private-network protection is closed** — the family of internal addresses a modern
+  router actually hands out was not being checked, nor the range mobile carriers use.
+- **Backup import is honest**: it does not reconcile anything, and importing the same backup twice
+  gives you a second copy of everything.
+
 ## 0.35.0 — 2026-08-11
 
 - **Models larger than your free memory now run.** A model file bigger than the memory the phone has
