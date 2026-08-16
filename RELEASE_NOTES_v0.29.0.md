@@ -15,5 +15,5 @@ The hash you get must match the value above exactly. If it does not, do not inst
 ---
 
 > 💸 Your phone can now look at a photo and read a PDF, and replies stopped ending before the answer. Tip if it earned one:
-> **PayPal:** paypal.me/FAMarco
+> **Ko-fi:** ko-fi.com/eversorhn
 > **Bitcoin:** `bc1qv92c3eyeqvhgfnez7spfd7v2aytkhpshsl65yv`

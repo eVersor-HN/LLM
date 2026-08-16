@@ -14,6 +14,12 @@ The hash you get must match the value above exactly. If it does not, do not inst
 
 ---
 
+> 💸 Your model's private notes-to-self were being printed as part of its answers. They are not any more. Tip if it earned it:
+> **Ko-fi:** ko-fi.com/eversorhn
+> **Bitcoin:** `bc1qv92c3eyeqvhgfnez7spfd7v2aytkhpshsl65yv`
+
+---
+
 The labels v0.34.0 added were right and there were too many of them at once.
 
 A model in the list now shows its name and only what decides whether you would look closer: whether

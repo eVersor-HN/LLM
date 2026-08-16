@@ -15,5 +15,5 @@ The hash you get must match the value above exactly. If it does not, do not inst
 ---
 
 > 💸 Three separate safety checks agreed your largest model was too dangerous to load. All three were wrong. Tip if you got it back:
-> **PayPal:** paypal.me/FAMarco
+> **Ko-fi:** ko-fi.com/eversorhn
 > **Bitcoin:** `bc1qv92c3eyeqvhgfnez7spfd7v2aytkhpshsl65yv`

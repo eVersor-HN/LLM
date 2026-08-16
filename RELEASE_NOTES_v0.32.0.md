@@ -14,6 +14,12 @@ The hash you get must match the value above exactly. If it does not, do not inst
 
 ---
 
+> 💸 A 30 GB model was running the slow way because one word was missing from a list. Tip if you got the speed back:
+> **Ko-fi:** ko-fi.com/eversorhn
+> **Bitcoin:** `bc1qv92c3eyeqvhgfnez7spfd7v2aytkhpshsl65yv`
+
+---
+
 Vision models find their projector, huge Qwen3-VL models stream their experts again, and the app
 stops claiming things it has not checked.
 

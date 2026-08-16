@@ -14,6 +14,12 @@ The hash you get must match the value above exactly. If it does not, do not inst
 
 ---
 
+> 💸 You can now download a model without leaving the app, or not copy it at all. Tip if it earned it:
+> **Ko-fi:** ko-fi.com/eversorhn
+> **Bitcoin:** `bc1qv92c3eyeqvhgfnez7spfd7v2aytkhpshsl65yv`
+
+---
+
 Getting a model onto your phone stops being the hardest part of using this app, dictation can now
 stay on the device, and the app no longer tells you a percentage it does not know.
 

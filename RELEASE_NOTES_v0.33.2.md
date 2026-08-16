@@ -14,6 +14,12 @@ The hash you get must match the value above exactly. If it does not, do not inst
 
 ---
 
+> 💸 Turns out the badge saying which processor was working had been guessing this whole time. Tip if it earned it:
+> **Ko-fi:** ko-fi.com/eversorhn
+> **Bitcoin:** `bc1qv92c3eyeqvhgfnez7spfd7v2aytkhpshsl65yv`
+
+---
+
 You bring your own model files, and the card in the library is the only place the app tells you what
 you have. This release went through every claim on that card and fixed the ones that were not true.
 

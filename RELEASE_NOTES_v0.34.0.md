@@ -14,6 +14,12 @@ The hash you get must match the value above exactly. If it does not, do not inst
 
 ---
 
+> 💸 A release spent almost entirely on making the model list shorter to read. Tip if it earned it:
+> **Ko-fi:** ko-fi.com/eversorhn
+> **Bitcoin:** `bc1qv92c3eyeqvhgfnez7spfd7v2aytkhpshsl65yv`
+
+---
+
 ## Every model tells you what it is
 
 A GGUF file is a name and a number of gigabytes. Everything else about it — whether it can look at a

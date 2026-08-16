@@ -14,6 +14,12 @@ The hash you get must match the value above exactly. If it does not, do not inst
 
 ---
 
+> 💸 The card said your model streams its experts. The engine disagreed. The engine was right. Tip if it earned it:
+> **Ko-fi:** ko-fi.com/eversorhn
+> **Bitcoin:** `bc1qv92c3eyeqvhgfnez7spfd7v2aytkhpshsl65yv`
+
+---
+
 A model card described a model that was not the one running.
 
 A Mixture-of-Experts model only streams its experts from storage when it does not comfortably fit in

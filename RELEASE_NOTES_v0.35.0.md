@@ -14,6 +14,12 @@ The hash you get must match the value above exactly. If it does not, do not inst
 
 ---
 
+> 💸 The button that promised to free memory spent three months freeing none of it. Tip if it earned it now:
+> **Ko-fi:** ko-fi.com/eversorhn
+> **Bitcoin:** `bc1qv92c3eyeqvhgfnez7spfd7v2aytkhpshsl65yv`
+
+---
+
 This release is about memory: the models it stops you running, and the button that promised to help.
 
 **Models larger than your free memory now run.** A model file bigger than the memory the phone had

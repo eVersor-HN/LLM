@@ -14,6 +14,12 @@ The hash you get must match the value above exactly. If it does not, do not inst
 
 ---
 
+> 💸 Asking the model one yes-or-no question was costing you the whole conversation, every time. Tip if you got the minute back:
+> **Ko-fi:** ko-fi.com/eversorhn
+> **Bitcoin:** `bc1qv92c3eyeqvhgfnez7spfd7v2aytkhpshsl65yv`
+
+---
+
 This release is mostly about the app telling you the truth, and one long wait that turned out to be
 avoidable.
 

@@ -14,6 +14,12 @@ The hash you get must match the value above exactly. If it does not, do not inst
 
 ---
 
+> 💸 Every free search server on the internet stopped talking to me, so the app grew a browser. Tip if it earned it:
+> **Ko-fi:** ko-fi.com/eversorhn
+> **Bitcoin:** `bc1qv92c3eyeqvhgfnez7spfd7v2aytkhpshsl65yv`
+
+---
+
 Web search works on a phone that was just installed, with nothing set up first.
 
 ## Search no longer needs anything set up first

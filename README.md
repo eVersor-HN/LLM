@@ -6,7 +6,7 @@
 
 > 💸 It runs offline so nobody can bill you — which is exactly why nobody bills me. Tip if it earned it:
 >
-> **PayPal** — paypal.me/FAMarco
+> **Ko-fi** — ko-fi.com/eversorhn
 >
 > **Bitcoin** — `bc1qv92c3eyeqvhgfnez7spfd7v2aytkhpshsl65yv`
 

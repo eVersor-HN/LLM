@@ -64,5 +64,5 @@ The hash you get must match the value above exactly. If it does not, do not inst
 ---
 
 > 💸 It writes code that runs on your phone. It does not, yet, write code that pays rent.
-> **PayPal:** paypal.me/FAMarco
+> **Ko-fi:** ko-fi.com/eversorhn
 > **Bitcoin:** `bc1qv92c3eyeqvhgfnez7spfd7v2aytkhpshsl65yv`

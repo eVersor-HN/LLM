@@ -76,5 +76,5 @@ sha256sum LLM-v0.17.0-public-arm64.apk
 
 The app is free and runs offline, so nothing bills you — and nothing bills me either. If it earned it:
 
-**PayPal** — paypal.me/FAMarco
+**Ko-fi** — ko-fi.com/eversorhn
 **Bitcoin** — `bc1qv92c3eyeqvhgfnez7spfd7v2aytkhpshsl65yv`

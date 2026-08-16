@@ -14,6 +14,12 @@ The hash you get must match the value above exactly. If it does not, do not inst
 
 ---
 
+> 💸 Opening the model list used to do a surprising amount of work. Now it does less. Tip if it earned it:
+> **Ko-fi:** ko-fi.com/eversorhn
+> **Bitcoin:** `bc1qv92c3eyeqvhgfnez7spfd7v2aytkhpshsl65yv`
+
+---
+
 A quiet release. Nothing changes on screen.
 
 The processor label removed in v0.34.0 left its machinery behind: every time the model list

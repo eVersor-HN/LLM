@@ -14,6 +14,12 @@ The hash you get must match the value above exactly. If it does not, do not inst
 
 ---
 
+> 💸 A check I added last week decided your vision model was not a vision model. Tip if you got it back:
+> **Ko-fi:** ko-fi.com/eversorhn
+> **Bitcoin:** `bc1qv92c3eyeqvhgfnez7spfd7v2aytkhpshsl65yv`
+
+---
+
 A correction to 0.30.0. If you installed that version and use a vision model, please update.
 
 ## Fixed
