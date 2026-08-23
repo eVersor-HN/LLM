@@ -1,132 +1,223 @@
-# LLM — Private, On-Device AI Chat
+# LLM
 
-**A complete AI chat that runs entirely on your Android phone. No account, no cloud, no telemetry.** You bring the model file; the app does the rest — offline, private, and yours.
+**Local capability. Direct control. No account, no cloud, no telemetry.**
 
-> Everything happens locally. Your conversations, characters and files stay on your phone. There is no sign-up, no tracking, and nothing to lose access to. The app makes no network connection at all unless you switch on one of the optional online features — see [What talks to the internet](#what-talks-to-the-internet) below. Both are off by default.
+A complete AI chat that runs entirely on your Android phone. You bring the model file; the app does
+the rest — offline, private, and yours. Built for people who want a modern assistant without handing
+their words to someone else's computer.
 
-> 💸 It runs offline so nobody can bill you — which is exactly why nobody bills me. Tip if it earned it:
->
-> **Ko-fi** — ko-fi.com/eversorhn
->
-> **Bitcoin** — `bc1qv92c3eyeqvhgfnez7spfd7v2aytkhpshsl65yv`
+Airplane mode works perfectly. Out of the box the app makes no network connection at all.
 
 ---
 
-## What is it?
+## Product status
 
-LLM is a self-contained AI chat app for Android. Point it at a model file you already have and start talking — the whole assistant lives on your device. It is built for people who want the power of a modern chat assistant without handing their words to someone else's computer.
+**Closed-source, proprietary software.** This repository carries the public documentation and the
+official releases. The source code is not published and no open-source rights are granted. See
+[LICENSE](LICENSE).
 
-No internet connection is required to use it. Airplane mode works perfectly.
+---
 
-## Why you can trust it
+## Support the project
 
-- **Offline by default.** Out of the box the app makes no network connection at all. Your messages are generated on your own hardware.
-- **Your data stays local.** Chats, characters, imported files and settings are stored only in local app storage, encrypted at rest.
-- **No account, ever.** There is nothing to register, nothing to log in to, and no profile to build.
+It runs offline so nobody can bill you — which is exactly why nobody bills me. Tip if it earned it.
+
+- **Ko-fi** — https://ko-fi.com/eversorhn
+- **PayPal** — https://paypal.me/FAMarco
+- **Bitcoin** — `bc1qv92c3eyeqvhgfnez7spfd7v2aytkhpshsl65yv`
+
+---
+
+## Local first, private by design
+
+- **Offline by default.** No network connection at all unless you switch on one of the two optional
+  online features below.
+- **No account, ever.** Nothing to register, nothing to log in to, no profile to build.
 - **No telemetry.** No analytics, no crash reporting, no phone-home — not even an optional one.
-- **No lock-in.** Your data is yours. Export it whenever you want and take it with you.
+- **Data stays local.** Chats, characters, imported files and settings live in local app storage,
+  encrypted at rest.
+- **No lock-in.** Export your data whenever you want and take it with you.
 
-## What talks to the internet
+### What can talk to the internet
 
-Two features can send data off the device. **Both are disabled by default and each takes several deliberate steps to switch on.** Everything else — the model, your chats, your characters — never touches a network.
+Two features can send data off the device. **Both are off by default** and each takes deliberate
+steps to switch on. Full detail in [SECURITY.md](SECURITY.md).
 
-- **Web search, open webpage, crawl.** If you enable them in Settings → Tools and model actions, the model can ask to run a search. Your **query text** is then sent to the search provider you configured: either your own [SearXNG](https://searx.space) instance, or the Brave Search API. Opening a webpage fetches that page directly. Your chat history and system prompt are never sent — only the query or the URL. Every request is shown to you for approval before it runs.
-- **Local API server.** An optional OpenAI-compatible server for other apps on your own network (Settings → Local API server). It binds to loopback by default; LAN mode requires a generated bearer token. Traffic on your LAN is plain HTTP, so treat it as you would any local development server.
+- **Web search, open webpage, crawl.** Sends your query text, or the URL you asked to open, to the
+  provider you configured. Chat history and system prompt are never sent. Every request is shown to
+  you for approval before it runs.
+- **Local API server.** An optional endpoint for your other apps on your own network. Loopback-only
+  unless you enable LAN mode, and always behind a generated bearer token.
 
 If you never enable either, the app never opens a socket.
 
-## Get it
+---
 
-1. Download the latest release from the [Releases](../../releases) page — see the [changelog](CHANGELOG.md) for what changed.
-2. Allow installation from your browser or file manager if Android asks.
-3. Open the app, add a model file, and start chatting.
+## Official distribution
 
-> **Updating:** if you already have v0.14.2 or newer, this installs straight on top and keeps your chats. Coming from anything older than v0.14.2, uninstall once first — the signing key changed in that release.
+Author: **eVersor-HN**
+Official repository: **https://github.com/eVersor-HN/LLM**
 
-## Verify what you downloaded
+Official binaries come only from the [Releases](../../releases) page of this repository. A file
+obtained anywhere else is not an official binary, whatever it is called.
 
-Every release lists the exact fingerprint of its installer so you can confirm the file is genuine and untampered before installing.
+## Download and install
+
+1. Download the latest `.apk` from [Releases](../../releases).
+2. Verify its SHA-256 (below).
+3. Allow installation from your browser or file manager if Android asks.
+4. Open the app, add a model file, and start.
+
+> **Updating:** v0.14.2 or newer installs straight on top and keeps your chats. Coming from anything
+> older, uninstall once first — the signing key changed in that release.
+
+## Verify authenticity — SHA-256
+
+Every official binary is published with its SHA-256 in the corresponding GitHub Release. **The
+filename and the hash must both match exactly.** If either does not, do not install the file.
 
 ```
-SHA-256:  69f2606d5954bb4d03db433583b147ce1dcd5cdb54d3c0a08f33d3a6e4f9f703
+LLM-v0.37.0-public-arm64.apk
+c02ad051249680022e9087dd5cbace1f573c8ab490ef17dcd81882225b03513d
 ```
 
-On Windows PowerShell:
+Windows PowerShell:
 
 ```powershell
-Get-FileHash .\LLM-v0.36.0-public-arm64.apk -Algorithm SHA256
+Get-FileHash .\LLM-v0.37.0-public-arm64.apk -Algorithm SHA256
 ```
 
-The value you get must match the one in the release notes exactly. If it does not, do not install the file.
+---
 
 ## Features
 
-### Private conversations
-Natural, flowing chat with your own model, with saved history that stays on your device. Pick up any conversation where you left off.
+### Control
+- Runs entirely on your own hardware, on a model file you choose.
+- No forced account, no mandatory cloud, no external dependency for normal use.
+- Optional app lock (PIN or fingerprint), encrypted backups, private-screen mode.
 
-### Built-in characters
-Twenty-one characters are built in and ready the moment you open the app, in two collections.
+### Conversation
+Natural, flowing chat with saved history that stays on your device. Long answers keep going on their
+own instead of stopping halfway. Answers render properly, tables included.
 
-**General** holds a senior engineer who answers with the fix rather than a lecture, a stage magician who will actually tell you how the trick is done, a diagnostician who troubleshoots anything broken, a curator who interviews you before recommending a thing, an emergency planner, a wilderness guide, and a night watchman who talks to the museum exhibits. **Cyberpunk** is the near-future set: privacy and threat modelling, forcing companies to delete your data, street medicine, salvage and repair, biohacking, conditioning, hardware builds, light-up clothing, invention, and security.
+### Twenty-one built-in characters
+Ready the moment you open the app, in two collections. **General** holds a senior engineer who
+answers with the fix rather than a lecture, a stage magician who will actually tell you how the
+trick is done, a diagnostician, a curator who interviews you before recommending anything, an
+emergency planner, a wilderness guide, and a night watchman who talks to the museum exhibits.
+**Cyberpunk** is the near-future set: privacy and threat modelling, data deletion, street medicine,
+salvage and repair, biohacking, conditioning, hardware builds, light-up clothing, invention and
+security.
 
-Several of them are not conversations but *procedures* — a typing engine that narrows sixteen personality types down to one, an interrogator who hunts for contradictions in your story, a machine that argues the strongest possible case against your plan, and a text escape room. Each shows its working as it goes.
+Several are not conversations but *procedures* — a typing engine that narrows sixteen personality
+types down to one, an interrogator who hunts contradictions in your story, a machine that argues the
+strongest case against your plan, and a text escape room. Each shows its working as it goes.
 
-Tap any card to start a chat where it greets you and stays in role. Import your own cards alongside them, kept in their own section so they never get lost among the built-ins. A set of ready-made behaviour presets lets you shape the assistant from strictly safe to completely unrestricted, and you can write your own.
+Import your own cards alongside them, kept in their own section. Behaviour presets run from strictly
+safe to completely unrestricted, and you can write your own.
 
-### Text adventures (RPG)
-A built-in **RPG** mode turns the model into your game master. Pick a setting — or let it surprise you — and play a text adventure with a live character sheet: health, attributes, inventory and status, all kept up to date as the story unfolds. There is no list of options to choose from: you write what you do, in your own words, and the story answers. When what you try could fail, a physical die falls across the screen and decides it — shake the phone while it is in the air and it keeps tumbling until you let it drop. Keep **world notes** for the places, people and secrets that matter, and the game master stays consistent with them as you go. The whole thing reads like a novel and runs entirely on your phone.
+### Text adventures
+A built-in RPG mode turns the model into your game master, with a live character sheet: health,
+attributes, inventory and status, kept current as the story unfolds. No menu of options — you write
+what you do, in your own words. When what you try could fail, a physical die falls across the screen
+and decides it; shake the phone while it is in the air and it keeps tumbling until you let it drop.
+Keep world notes for the places, people and secrets that matter, and the game master stays
+consistent with them.
 
 ### Models far larger than your memory
-Some of the strongest models available are far bigger than any phone's memory — and this app runs them anyway, reading the parts it needs from storage as it goes. A 24 GB model on a phone that has nowhere near 24 GB free is an ordinary Tuesday here.
+Some of the strongest models available are far bigger than any phone's memory. This app runs them
+anyway, reading the parts it needs from storage as it goes — a 24 GB model on a phone with nowhere
+near 24 GB free is an ordinary Tuesday here. See [Which model should I get?](#which-model-should-i-get)
+for which families this applies to.
 
 ### Nothing loads by surprise
-Every model tells you how much free memory it needs before you tap it, and the drawer shows how much your phone actually has, live. If something is loaded and you need the memory back, one button hands it over.
+Every model states how much free memory it will actually need before you tap it, and the drawer
+shows how much your phone has, live. If something is loaded and you want the memory back, one button
+hands it over.
 
-### Long answers, uninterrupted
-When a reply is long, the app keeps it going on its own instead of stopping halfway — you get the whole answer without prompting for more.
+### Vision and documents
+Models that can see accept photos. PDF, Word, Excel and plain text are read into the conversation,
+and you see the extracted text before anything is sent.
 
-### Fast on modern phones
-On newer devices the app uses on-device acceleration to answer faster, and picks the right setting for each model automatically — no tuning required. Whether acceleration is available at all depends on the model file you bring; see [Which model file should I get?](#which-model-file-should-i-get) below.
+### Voice
+Dictate instead of typing, on-device on Android 12 and newer. Replies can be read aloud.
 
 ### Made to read comfortably
-A clean, modern interface with light and dark modes, adjustable text and spacing, high-contrast and reduced-motion options, and a range of accent colours to make it yours. Answers render properly — including tables — and a built-in Help section explains the options in plain language.
+Light and dark, adjustable text and spacing, high-contrast and reduced-motion options, a range of
+accent colours, and a Help section written in plain language.
 
-### Your own local API
-Turn your phone into a private AI endpoint on your home network, so your other apps and devices can use your on-device assistant — still without touching the cloud.
+### Your own local endpoint
+Turn your phone into a private AI endpoint on your home network, so your other devices can use your
+on-device assistant — still without touching the cloud.
 
-### Safe by default
-Optional app lock with PIN or fingerprint, encrypted backups, and a private-screen mode keep your conversations for your eyes only.
+---
 
-## Which model file should I get?
+## Which model should I get?
 
-Your phone has two processors that can run a model, and which one your model gets to use is decided largely by the file you download — so it is worth thirty seconds before you pick one.
+**Start with a Mixture-of-Experts (MoE) model.** They are the reason this app can run something
+bigger than your phone's memory: only the parts needed for the current word are read from storage,
+so a model several times your free memory still runs.
 
-**The two processors, in plain terms:**
+That works for these families:
 
-| | What it is | What it's good at |
-|---|---|---|
-| **CPU** | The general-purpose processor every phone has | Always works, with any model. The reliable default, and on most phones the fastest one too. |
-| **GPU** | The graphics chip | Sometimes helps, sometimes doesn't — the app measures it once and then keeps the winner. |
+- **Qwen3 MoE** and **Qwen2 MoE** — e.g. Qwen3-30B-A3B
+- **Qwen3-VL / Qwen2-VL MoE** — the same, with images
+- **Qwen3.5 MoE** — e.g. 35B-A3B
+- **Gemma 4 MoE** — e.g. 26B-A4B
+- **gpt-oss** — 20B and 120B
+- **LFM2 / LFM2.5 MoE** — e.g. 8B-A1B, 24B-A2B
 
-**The one thing you control: the quantization.**
+Everything else — ordinary dense models, and MoE builds outside that list such as Mixtral or
+DeepSeek MoE — has to fit in your free memory. It will still load if it does not, but a dense model
+needs all of its weights for every single word, so expect many seconds per word.
 
-Model files come in "quantizations" — compression levels, written in the filename like `Q4_0` or `Q4_K_M`. This is not only a quality dial; it decides whether the GPU can run the file at all, because the graphics chip physically understands only certain formats.
+**A safe first model:** Qwen3-30B-A3B in a Q4 quantization. Good German and English, and it streams.
 
-- **`Q4_0` — the safe bet.** The format the GPU path accepts. If you want to give the GPU a chance, get this one.
-- **`Q4_K_M`, `Q5_K_M`, `Q6_K`** — the most common downloads, marginally better quality, but **CPU-only**. If your model never leaves the CPU, this is almost always why.
+### About quantization
 
-Do not over-think it: the CPU path is well optimised (ARM KleidiAI, wide instruction support) and on many devices simply wins. A `Q4_K_M` model on the CPU is a perfectly good default.
+Model files come in "quantizations" — compression levels written into the filename like `Q4_0` or
+`Q4_K_M`. It is not only a quality dial: it decides whether your phone's graphics chip can run the
+file at all.
 
-**Curious what your model is actually using?** Settings → Device and performance names the exact reason for the model you have selected.
+- **`Q4_0`** — the format the GPU path accepts. Take this one if you want to give the GPU a chance.
+- **`Q4_K_M`, `Q5_K_M`, `Q6_K`** — the most common downloads, marginally better quality, CPU-only.
+
+Do not over-think it. The CPU path is well optimised and on many devices simply wins; a `Q4_K_M`
+model on the CPU is a perfectly good default. Settings → Device and performance names the exact
+reason for the model you have selected.
+
+---
+
+## Limitations and known boundaries
+
+- **The model writes the answers, not the app.** Output can be confidently wrong. See
+  [DISCLAIMER.md](DISCLAIMER.md).
+- **No model is included.** You supply the file.
+- **Speed depends on your device and the file.** A model much larger than your memory runs at a
+  calm pace and reads heavily from storage.
+- **LAN mode of the local API server is plain HTTP.** Use it only on a network you trust.
+- **DNS rebinding is not defeated** by the address filter that protects the web tools; see
+  [SECURITY.md](SECURITY.md) for why.
+- **A rooted or compromised device defeats the app's protections.** The app lock raises the bar; it
+  does not replace device encryption and a screen lock.
 
 ## System requirements
 
-- A modern Android phone with enough memory and storage for the model file you intend to run.
-- A compatible model file (which you provide) — see [Which model file should I get?](#which-model-file-should-i-get) if you want on-device acceleration.
+- Android phone, **arm64**.
+- Enough free memory and storage for the model file you intend to run — the app tells you how much
+  before you load it.
+- A model file in GGUF format, which you supply.
 - No internet connection required.
+
+---
 
 ## License
 
-Proprietary. All rights reserved. This repository contains the app's public documentation and releases only; the source code is not open.
+**Proprietary. All rights reserved.** You receive a limited, personal right to use the distributed
+application. Redistribution, modification and reverse engineering are not permitted. Third-party
+components remain governed by their own licenses — see [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md).
+The authoritative text is [LICENSE](LICENSE).
+
+Full version history: [CHANGELOG.md](CHANGELOG.md)
 
 © eVersor-HN

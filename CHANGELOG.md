@@ -1,5 +1,51 @@
 # Changelog
 
+## 0.37.0 — 2026-08-23
+
+- **The app now tells you which model to get.** On first start it names the model families it can
+  run straight from storage — the ones that let a model far larger than your phone's memory work at
+  all — and says plainly what happens to everything else. Choosing well is the single biggest
+  difference between this app being fast and being unusable, and until now nothing said so.
+- **The Chat and RPG tabs no longer carry a giant letter behind them.** The empty screen is empty.
+- **Saving settings saves all of them.** Changes to the tool settings or the local server made on
+  the settings page were discarded by the page's own Save button. They are written now.
+- **A chat with tools enabled is noticeably quicker to answer.** Work that was being repeated for
+  every single word of every reply is now done only when it is actually needed.
+- **Replies land in the chat they belong to.** Switching to another conversation while an answer was
+  being written could grow that answer in the wrong transcript.
+- **Attaching a file mid-reply no longer breaks the reply.** Attaching or importing while the model
+  was writing could leave Stop doing nothing and let a second turn start on top of the first.
+- **Changing a model's settings no longer locks it out.** Adjusting context size or threads on a
+  large loaded model could make the app refuse to reload it, on the grounds that memory the model
+  itself was holding was unavailable.
+- **A short greeting no longer triggers a web lookup.** The guard against that was measuring text
+  the app had added itself, so it stopped working in any chat set to short replies.
+- **Chinese, Japanese and Korean chats keep working with the web tools.** The space set aside for a
+  search result was calculated at the wrong rate for those scripts and could overflow the
+  conversation.
+- **Large text attachments no longer crash the app.** A big enough extracted document could not be
+  read back, and re-opening that chat closed the app again. The document itself is untouched.
+- **A failed restore no longer deletes what it restored.** If the last step failed, the files were
+  removed while their entries stayed.
+- **Backups estimate their size without reading your entire history.**
+- **The story mode stopped rolling dice at breakfast.** Ordinary sentences — eating breakfast,
+  walking along a rampart, handing over a gift — were being treated as risky attempts and resolved
+  with a die. Dialogue that began "Do you…" could vanish from the story, and freeze the text while
+  it was being written. A knocked-out character reads as down rather than lightly hurt. And the die
+  is no longer thrown for a turn that was never sent.
+- **Per-chat system prompt and format are reachable again**, in the drawer under "This chat" — the
+  settings page had been pointing at a menu that no longer existed.
+- **Honest labels.** The performance card says "planned" until something is actually loaded and then
+  reports what the engine did; the NPU card no longer prints a placeholder instead of a size;
+  "Reset model" is called "Reset settings" and asks first; Back from Help returns where you came
+  from; the first-run tip names a gesture that works.
+- **Heat and memory no longer undo each other.** Cooling down could hand a backgrounded app its full
+  memory appetite back, which is how a background app gets closed.
+- **Crawling respects "Disallow: /"** — the one robots.txt rule that was being ignored.
+- **A redirect no longer carries your search API key to another site.**
+- **Research with several queries works again**, instead of the searches interfering with each other
+  and timing out.
+
 ## 0.36.0 — 2026-08-15
 
 - **A chat with web search on is dramatically faster.** Before answering in such a chat the app asks

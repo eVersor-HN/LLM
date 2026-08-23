@@ -1,2 +1,5 @@
 # Installers live on the Releases page, not in the repository.
 *.apk
+
+# Per-version notes live in CHANGELOG.md; release bodies carry the hash only.
+RELEASE_NOTES_*.md
