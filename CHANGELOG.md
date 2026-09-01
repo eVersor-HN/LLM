@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.39.0 — 2026-09-01
+
+- **The app speaks German.** Not a machine pass: every line was written for this app's voice, and a
+  checker compares the German against the English for missing entries, mismatched placeholders and
+  lost spacing before anything ships. Choose it under “App language” in the system settings for LLM.
+  The Help page and a few menus are still English and fall back line by line, so nothing is ever
+  blank — those follow next.
+- **The interface can be translated at all now.** It could not before: every word the app said was
+  written into the code. There are now 613 separate texts, and adding a language is a file rather
+  than a rewrite of the app.
+
 ## 0.38.0 — 2026-09-01
 
 - **Settings open as four choices instead of a hundred controls.** The page had grown to 105
