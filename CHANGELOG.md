@@ -1,5 +1,34 @@
 # Changelog
 
+## 0.38.0 — 2026-09-01
+
+- **Settings open as four choices instead of a hundred controls.** The page had grown to 105
+  switches, number fields and menus across thirteen cards — enough that its own author could not
+  read it. It now opens on one card: how much of the phone to spend, how you want replies written,
+  what the model may talk about, and whether it may look things up. Each is a tap, each says what it
+  costs you, and each one sets the dozens of values underneath it. Nothing was removed: "Show every
+  setting" brings the old page back exactly as it was, and anything you had tuned by hand is kept
+  and shown as "Custom" rather than quietly replaced.
+- **The app stops asking to search the web for things that have not changed since antiquity.**
+  "Name three Roman emperors" produced a request to look it up. The rule it was following asked
+  whether an answer was "current, specific or verifiable", and almost everything is verifiable. It
+  now asks the only question that matters: does the answer change over time? News, prices, versions,
+  who currently holds an office — yes. History, science, definitions, how something works — no,
+  answered from what the model knows. A permission prompt that appears when nothing needs permission
+  is how people learn to tap Allow without reading it.
+- **Adventure turns are shorter to write.** The game master had to repeat the entire character sheet
+  every turn — around twenty-five lines, roughly half of everything it wrote — although the app hands
+  it that same sheet at the start of every turn anyway. It now writes only what actually changed. The
+  sheet on screen is identical; there is simply much less for the model to type before the story
+  continues.
+- **A stray dash no longer sits under every adventure turn.** Models write a rule between the story
+  and the part the app reads; with that part lifted out, the rule was left behind.
+- **More large models can stream their experts.** Eight more Mixture-of-Experts architectures are
+  recognised, among them GLM-4.5/4.6, Ling 2.0/3.0, Llama 4, MiniMax-M2, dots.llm1, Hunyuan and
+  OLMoE. Previously a model like these would load, silently fall back to holding everything in
+  memory, and crawl; now the ones that are too large for RAM read their experts from storage the way
+  the Qwen and Gemma MoEs already did.
+
 ## 0.37.0 — 2026-08-23
 
 - **The app now tells you which model to get.** On first start it names the model families it can
