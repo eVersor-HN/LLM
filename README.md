@@ -77,14 +77,14 @@ Every official binary is published with its SHA-256 in the corresponding GitHub 
 filename and the hash must both match exactly.** If either does not, do not install the file.
 
 ```
-LLM-v0.40.0-public-arm64.apk
-7a42fe8d8ef6b278e1b386b291294a483a0e5d96c357aa281aed1b09151b2149
+LLM-v0.41.0-public-arm64.apk
+0cfc56d3ebb6eba927804c51f26d45cebec61ef5f2a7169c6135a572e03ea93e
 ```
 
 Windows PowerShell:
 
 ```powershell
-Get-FileHash .\LLM-v0.40.0-public-arm64.apk -Algorithm SHA256
+Get-FileHash .\LLM-v0.41.0-public-arm64.apk -Algorithm SHA256
 ```
 
 ---
@@ -189,6 +189,10 @@ That works for these families:
 - **Hunyuan MoE** — e.g. A13B
 - **dots.llm1**
 - **MiniMax M2**
+
+Many of these are published as two or three files rather than one. Select all of the parts at
+once in the picker — press and hold the first, tap the rest — and choose "Import a copy"; they are
+added as a single model.
 
 Everything else — ordinary dense models, and MoE builds outside that list such as Mixtral or
 DeepSeek MoE — has to fit in your free memory. It will still load if it does not, but a dense model

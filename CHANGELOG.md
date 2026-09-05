@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.41.0 — 2026-09-05
+
+- **Models published in several files now work.** The strongest models are often too large to be
+  distributed as one file, so the people who quantize them cut them into two or three parts — and
+  until now the app refused all of them, which quietly meant the best versions of GLM-4.5, Llama 4,
+  dots.llm1 and MiniMax were out of reach and only their crudest single-file variants were not. In
+  the file picker, press and hold the first part until it is selected, tap the rest, and confirm:
+  they are imported together as one model. Choose "Import a copy" for these — a linked file is handed
+  to the engine without a location, so it cannot find its other parts. A single part on its own is
+  still refused, and now says what to do instead.
+- **MiniMax M2 can hold a conversation.** It loaded and ran perfectly well before but could not chat,
+  because the app did not recognise its turn format and said so rather than guessing. It does now.
+
 ## 0.40.0 — 2026-09-05
 
 - **Fifty cards to start from, in six groups.** Urban survival, wilderness, tech, repair and build,
