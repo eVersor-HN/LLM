@@ -77,14 +77,14 @@ Every official binary is published with its SHA-256 in the corresponding GitHub 
 filename and the hash must both match exactly.** If either does not, do not install the file.
 
 ```
-LLM-v0.39.0-public-arm64.apk
-0ed34ee68d09eaf03922fae407d239ca9516d26edb8fe6ddecbdd2990c31fc57
+LLM-v0.40.0-public-arm64.apk
+7a42fe8d8ef6b278e1b386b291294a483a0e5d96c357aa281aed1b09151b2149
 ```
 
 Windows PowerShell:
 
 ```powershell
-Get-FileHash .\LLM-v0.39.0-public-arm64.apk -Algorithm SHA256
+Get-FileHash .\LLM-v0.40.0-public-arm64.apk -Algorithm SHA256
 ```
 
 ---
@@ -100,29 +100,45 @@ Get-FileHash .\LLM-v0.39.0-public-arm64.apk -Algorithm SHA256
 Natural, flowing chat with saved history that stays on your device. Long answers keep going on their
 own instead of stopping halfway. Answers render properly, tables included.
 
-### Twenty-one built-in characters
-Ready the moment you open the app, in two collections. **General** holds a senior engineer who
-answers with the fix rather than a lecture, a stage magician who will actually tell you how the
-trick is done, a diagnostician, a curator who interviews you before recommending anything, an
-emergency planner, a wilderness guide, and a night watchman who talks to the museum exhibits.
-**Cyberpunk** is the near-future set: privacy and threat modelling, data deletion, street medicine,
-salvage and repair, biohacking, conditioning, hardware builds, light-up clothing, invention and
-security.
+### Fifty built-in cards
+Ready the moment you open the app, in six groups you can open one at a time.
 
-Several are not conversations but *procedures* — a typing engine that narrows sixteen personality
-types down to one, an interrogator who hunts contradictions in your story, a machine that argues the
-strongest case against your plan, and a text escape room. Each shows its working as it goes.
+- **Urban survival** — a power cut that is not coming back, drinking water when the tap stops, a
+  store worth having, when to leave and by which road, the street at night, a door worth locking,
+  dense crowds, and what still works when the network does not.
+- **Wilderness** — fire in the wet, navigation without a phone, staying warm, finding water, wild
+  food, being lost, reading the sky, and injuries a long way from a road.
+- **Tech** — electronics and soldering, a home network that keeps dropping, repairing the device you
+  were told is unrepairable, privacy that is worth the effort, an account someone got into, the
+  command line, 3D printing, old hardware, and radio.
+- **Repair & build** — wood, walls and fixings, plumbing, house wiring, a bicycle, a car, clothes,
+  and how to join two things so they stay joined.
+- **Everyday** — first aid, cooking from what is in the kitchen, letters from offices, money, running
+  a home, the bad twenty minutes, the conversation you keep putting off, symptoms, and the first
+  minute of an accident.
+- **People** — a friend who is glad to hear from you and still tells you when your plan is bad, a
+  coach who asks whether you did it, someone who only listens, a mentor, someone who argues the other
+  side on purpose, an old man with time, and company at three in the morning.
+
+Two things run through all of them. **None is written to agree with you** — several exist
+specifically to disagree. And where it matters, **a card says where it stops**: the foraging card
+will never confirm that a plant is safe to eat, the first-aid and symptom cards name the point where
+you call an ambulance instead of reading further, and the electrical card is clear about which work
+belongs to an electrician.
 
 Import your own cards alongside them, kept in their own section. Behaviour presets run from strictly
 safe to completely unrestricted, and you can write your own.
 
-### Text adventures
-A built-in RPG mode turns the model into your game master, with a live character sheet: health,
-attributes, inventory and status, kept current as the story unfolds. No menu of options — you write
-what you do, in your own words. When what you try could fail, a physical die falls across the screen
-and decides it; shake the phone while it is in the air and it keeps tumbling until you let it drop.
-Keep world notes for the places, people and secrets that matter, and the game master stays
-consistent with them.
+### Decide what a reply is worth
+Four levels — Fast, Normal, Thorough, Maximum — sit above the message box, and each shows the longest
+it can take on the model you have loaded. Fast answers straight away with no reasoning step and no
+lookup; Maximum gives the model room to work a problem through and check several sources. The limit
+on thinking is real: the app ends it when the budget is spent rather than asking the model nicely.
+
+### Every model tells you how fast it was
+Once a model has written something, its row shows the speed it actually reached on your phone — a
+measurement, not a guess from the file size. Change the settings it ran under and the number says so
+rather than quietly standing for something else.
 
 ### Models far larger than your memory
 Some of the strongest models available are far bigger than any phone's memory. This app runs them
@@ -166,6 +182,13 @@ That works for these families:
 - **Gemma 4 MoE** — e.g. 26B-A4B
 - **gpt-oss** — 20B and 120B
 - **LFM2 / LFM2.5 MoE** — e.g. 8B-A1B, 24B-A2B
+- **Ling / Ring** — e.g. Ling-lite, Ling-mini-2.0
+- **GLM-4.5 / 4.6 / 4.7**, including the Air builds
+- **OLMoE** — e.g. 1B-7B
+- **Llama 4** — Scout and Maverick
+- **Hunyuan MoE** — e.g. A13B
+- **dots.llm1**
+- **MiniMax M2**
 
 Everything else — ordinary dense models, and MoE builds outside that list such as Mixtral or
 DeepSeek MoE — has to fit in your free memory. It will still load if it does not, but a dense model

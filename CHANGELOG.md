@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.40.0 — 2026-09-04
+
+- **Fifty cards to start from, in six groups.** Urban survival, wilderness, tech, repair and build,
+  everyday life, and people. They are practical: a power cut, water when the tap stops, a blocked
+  drain, a bicycle, a wound, a letter from an office, a network that keeps dropping. The last group
+  is people rather than tasks — a friend, a coach, someone who only listens, someone who argues the
+  other side on purpose. None of them is written to agree with you automatically, and several exist
+  specifically to disagree. Where it matters a card says where it stops: the foraging card will never
+  confirm that a plant is safe to eat, the first-aid and symptom cards name the point where you call
+  an ambulance instead of reading on, and the electrical card is clear about which work belongs to an
+  electrician.
+- **You decide what a reply is worth, and see what it costs.** Four levels above the message box —
+  Fast, Normal, Thorough, Maximum — each showing the longest it can take on the model you have
+  loaded. Fast answers straight away, with no reasoning step and no web lookup. Maximum gives the
+  model room to work a problem through and check several sources. The limit on thinking is enforced
+  rather than requested: when the budget is spent the app ends the reasoning and asks for the answer.
+- **Every model shows the speed it actually reached on your phone.** Not a guess from the file size —
+  the number it managed the last time it wrote something. Change the settings it ran under and the
+  row says the reading no longer applies, instead of quietly standing for something else.
+- **The list of families that run bigger than your memory was seven short.** Ling and Ring, GLM-4.5
+  and its Air builds, OLMoE, Llama 4, Hunyuan MoE, dots.llm1 and MiniMax M2 all work and none of them
+  was named — in the app or here. A 45 GB model has now been run on a phone with 23 GB of memory.
+- **RPG mode has been removed, and the chats that belonged to it are deleted when the app first
+  starts.** Ordinary chats, cards and models are untouched.
+
 ## 0.39.0 — 2026-09-01
 
 - **The app speaks German.** Not a machine pass: every line was written for this app's voice, and a
