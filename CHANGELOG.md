@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.40.0 — 2026-09-04
+## 0.40.0 — 2026-09-05
 
 - **Fifty cards to start from, in six groups.** Urban survival, wilderness, tech, repair and build,
   everyday life, and people. They are practical: a power cut, water when the tap stops, a blocked
