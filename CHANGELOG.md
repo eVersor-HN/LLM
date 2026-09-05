@@ -1,5 +1,20 @@
 # Changelog
 
+## 0.42.0 — 2026-09-05
+
+- **The German is finished.** The parts that had stayed English are translated: the whole Help page,
+  every menu choice — appearance, accent, font, reply length, sampling, backend, search provider,
+  crawl depth, the card groups, the effort levels — and the sidebar, which turned out never to have
+  been extracted at all. There is no English left mid-page.
+- **A menu could show a number instead of its name.** Menu choices are built before the app can look
+  a word up, so each one now carries the reference to its text rather than the text itself. In two
+  places that reference reached the screen unresolved and the settings page read "Mode: 2131755469".
+  Fixed, and the build now fails if it happens again — the compiler cannot see this one, because
+  every way of printing a number accepts one silently.
+- **Translations are checked before a build, not after.** Missing entries, a language carrying a word
+  English no longer has, and — the one that actually crashes — a translation whose placeholders no
+  longer match what the app passes in.
+
 ## 0.41.0 — 2026-09-05
 
 - **Models published in several files now work.** The strongest models are often too large to be
