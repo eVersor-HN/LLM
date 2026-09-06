@@ -1,5 +1,43 @@
 # Changelog
 
+## 0.43.0 — 2026-09-06
+
+- **A big model just got a quarter faster, and it was one setting.** "Run huge models" now asks the
+  engine to skip a routed expert only when it misses the cache *and* the model barely wanted it —
+  three quarters of the way up that scale rather than all of it. Measured on a 23 GB
+  Qwen3.5-35B-A3B, the same file on the same phone: **6.3 tokens a second against 4.9**. The app
+  could only ever ask for the most aggressive setting there is, which is why it never asked. The top
+  expert is always computed and the remaining weights are rebalanced, so this buys speed with a
+  little precision and nothing else — it is on for "Run huge models" and off everywhere else,
+  because it makes a reply slightly different each time.
+- **You can see how hot the phone is.** The temperature sits next to the free-memory figure in the
+  sidebar and turns amber at 75°, which is where these phones begin slowing themselves down. A model
+  this size is real work and the phone gets warm doing it; a number is more use than a guess.
+- **The app now tells the processor what it is trying to do.** A phone assumes an app in front of you
+  is waiting for you, and parks its fastest cores accordingly — which is why the same work can be
+  quicker from a command line than from an app. Every token now reports what it cost, and the target
+  corrects itself from the measured rate.
+- **Every setting the app can decide for you is gone.** The page had 86 controls in 13 cards, most of
+  them a second way to set what one of the four Setup choices already sets — two ways to say the same
+  thing, and no way to see which had won. It is 18 now: the four choices, and the six things no
+  preset covers. Nothing was silently downgraded; the four choices still set everything underneath
+  them.
+- **The chat is a chat.** The bar across the top held exactly one button, and that button is still in
+  the sidebar next to the memory it frees — so the bar is gone and the conversation starts at the top
+  of the screen. The sidebar's own row of buttons was cut off at the edge, with Settings reading
+  "Set…" and Help off-screen entirely; it wraps now, and the assistant's and your name moved into
+  "This chat", beside the other things that belong to one conversation.
+- **The biggest weights are held in memory again.** A single limit, set to stop one phone's graphics
+  driver from crashing on an unusually large tensor, had been set low enough to unpin 40 % of the
+  weights every token touches — including the one every single word goes through. It is raised, and
+  the app now proves the higher limit on your device rather than assuming it: if a phone cannot take
+  it, it finds out once and never asks again.
+- **Brave Search is gone.** It was one of three ways to run a search and the only one that wanted an
+  account, a subscription and a key kept in the phone's keystore. The built-in browser is the default
+  and needs none of that, and SearXNG is still there for anyone running their own.
+- **The local API server has its own page again**, next to backup, instead of being buried behind a
+  switch called "Show every setting".
+
 ## 0.42.0 — 2026-09-05
 
 - **The German is finished.** The parts that had stayed English are translated: the whole Help page,

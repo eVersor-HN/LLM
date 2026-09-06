@@ -77,14 +77,14 @@ Every official binary is published with its SHA-256 in the corresponding GitHub 
 filename and the hash must both match exactly.** If either does not, do not install the file.
 
 ```
-LLM-v0.42.0-public-arm64.apk
-ef85589433003687c5bc7d1e2a112e13fb56ef561e5afd5330952861facd6c2f
+LLM-v0.43.0-public-arm64.apk
+405ba7b90777c31877712949e1c4ad5cc9d4f2c37332615e0ade243301788b26
 ```
 
 Windows PowerShell:
 
 ```powershell
-Get-FileHash .\LLM-v0.42.0-public-arm64.apk -Algorithm SHA256
+Get-FileHash .\LLM-v0.43.0-public-arm64.apk -Algorithm SHA256
 ```
 
 ---
